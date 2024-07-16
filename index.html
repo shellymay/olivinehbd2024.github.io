@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab 頁籤範例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            padding: 20px;
+            color: white;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-buttons button.active {
+            background-color: #555;
+        }
+
+        .tab-contents {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tab-content {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            opacity: 0;
+            transition: top 0.5s, opacity 0.5s;
+        }
+
+        .tab-content.active {
+            top: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab-buttons">
+            <button class="active" onclick="showTab(0)">Tab 1</button>
+            <button onclick="showTab(1)">Tab 2</button>
+            <button onclick="showTab(2)">Tab 3</button>
+            <button onclick="showTab(3)">Tab 4</button>
+            <button onclick="showTab(4)">Tab 5</button>
+        </div>
+        <div class="tab-contents">
+            <div class="tab-content active">Tab 1 Content</div>
+            <div class="tab-content">Tab 2 Content</div>
+            <div class="tab-content">Tab 3 Content</div>
+            <div class="tab-content">Tab 4 Content</div>
+            <div class="tab-content">Tab 5 Content</div>
+        </div>
+    </div>
+
+    <script>
+        let currentTab = 0;
+
+        function showTab(index) {
+            const buttons = document.querySelectorAll('.tab-buttons button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            buttons.forEach(button => button.classList.remove('active'));
+            contents.forEach(content => {
+                content.classList.remove('active');
+                content.style.top = "100%";
+                content.style.opacity = "0";
+            });
+
+            buttons[index].classList.add('active');
+            contents[index].classList.add('active');
+            contents[index].style.top = "0";
+            contents[index].style.opacity = "1";
+            currentTab = index;
+        }
+
+        function handleScroll(event) {
+            const delta = Math.sign(event.deltaY);
+            if (delta > 0) {
+                currentTab = (currentTab + 1) % 5;
+            } else {
+                currentTab = (currentTab - 1 + 5) % 5;
+            }
+            showTab(currentTab);
+        }
+
+        window.addEventListener('wheel', handleScroll);
+
+        let touchStartY = 0;
+
+        function handleTouchStart(event) {
+            touchStartY = event.touches[0].clientY;
+        }
+
+        function handleTouchEnd(event) {
+            const touchEndY = event.changedTouches[0].clientY;
+            const delta = touchStartY - touchEndY;
+            if (Math.abs(delta) > 50) { // Min delta to consider as a swipe
+                if (delta > 0) {
+                    currentTab = (currentTab + 1) % 5;
+                } else {
+                    currentTab = (currentTab - 1 + 5) % 5;
+                }
+                showTab(currentTab);
+            }
+        }
+
+        window.addEventListener('touchstart', handleTouchStart);
+        window.addEventListener('touchend', handleTouchEnd);
+    </script>
+</body>
+</html>
