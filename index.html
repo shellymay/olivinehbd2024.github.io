@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tab 頁籤範例</title>
+    <title>翠色聖禱祭 ∥ 非官方奧利文生日慶祝應援企劃2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twemoji-colr-font@15.0.3/twemoji.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Noto Sans TC", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 3px;
         }
 
         html, body {
@@ -31,24 +40,23 @@
         }
 
         .tab-buttons {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             background-color: #333;
             margin-bottom: 10px;
+            transition: .3s;
         }
 
         .tab-buttons button {
-            flex: 1;
             padding: 20px;
             color: white;
             background-color: #333;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
         .tab-buttons button.active {
-            background-color: #555;
+            background-color: pink;
         }
 
         .tab-contents {
@@ -68,11 +76,32 @@
             font-size: 24px;
             opacity: 0;
             transition: top 0.5s, opacity 0.5s;
+            background: yellow;
         }
 
         .tab-content.active {
             top: 0;
             opacity: 1;
+        }
+
+        .starbar {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            display: grid;
+            grid-template-columns: 0fr 2fr 4fr;
+            transition: .6s;
+            background: red;
+        }
+        .spaceleft {
+            background: green;
+            
+        }
+        .star {
+            text-align: center;
+        }
+        .spaceright {
+            background: blue;
         }
     </style>
 </head>
@@ -80,11 +109,16 @@
     <div class="frame">
         <div class="tabs">
             <div class="tab-buttons">
-                <button class="active" onclick="showTab(0)">Tab 1</button>
-                <button onclick="showTab(1)">Tab 2</button>
-                <button onclick="showTab(2)">Tab 3</button>
-                <button onclick="showTab(3)">Tab 4</button>
-                <button onclick="showTab(4)">Tab 5</button>
+                <button class="active" onclick="showTab(0)">首頁</button>
+                <button onclick="showTab(1)">活動概要🇨🇦</button>
+                <button onclick="showTab(2)">咖啡廳應援</button>
+                <button onclick="showTab(3)">信徒創作募集</button>
+                <button onclick="showTab(4)">企劃團隊</button>
+            </div>
+            <div class="starbar">
+                <div class="spaceleft"></div>
+                <div class="star">✧</div>
+                <div class="spaceright"></div>
             </div>
             <div class="tab-contents">
                 <div class="tab-content active">Tab 1 Content</div>
@@ -99,23 +133,58 @@
     <script>
         let currentTab = 0;
 
-        function showTab(index) {
-            const buttons = document.querySelectorAll('.tab-buttons button');
-            const contents = document.querySelectorAll('.tab-content');
+function showTab(index) {
+    const buttonSwitch = document.querySelector('.tab-buttons');
+    const buttons = document.querySelectorAll('.tab-buttons button');
+    const contents = document.querySelectorAll('.tab-content');
+    const starBar = document.querySelector('.starbar');
 
-            buttons.forEach(button => button.classList.remove('active'));
-            contents.forEach(content => {
-                content.classList.remove('active');
-                content.style.top = "100%";
-                content.style.opacity = "0";
-            });
-
-            buttons[index].classList.add('active');
-            contents[index].classList.add('active');
-            contents[index].style.top = "0";
-            contents[index].style.opacity = "1";
-            currentTab = index;
+    buttons.forEach((button, i) => {
+        button.classList.remove('active');
+        // button.style.gridColumn = `span 1`;
+        if (i === index) {
+            button.classList.add('active');
+            // button.style.gridColumn = `span 2`;
         }
+    });
+
+    contents.forEach(content => {
+        content.classList.remove('active');
+        content.style.top = "100%";
+        content.style.opacity = "0";
+    });
+
+    contents[index].classList.add('active');
+    contents[index].style.top = "0";
+    contents[index].style.opacity = "1";
+
+    // 更改starbar的位置
+    switch (index) {
+        case 0:
+            starBar.style.gridTemplateColumns = '0fr 2fr 4fr';
+            buttonSwitch.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
+            break;
+        case 1:
+            starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 2fr 1fr 1fr 1fr';
+            break;
+        case 2:
+            starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 1fr 2fr 1fr 1fr';
+            break;
+        case 3:
+            starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 2fr 1fr';
+            break;
+        case 4:
+            starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 2fr';
+            break;
+    }
+
+    currentTab = index;
+}
+
 
         function handleScroll(event) {
             const delta = Math.sign(event.deltaY);
