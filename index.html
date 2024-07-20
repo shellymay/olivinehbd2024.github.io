@@ -36,19 +36,18 @@
         .tabs {
             display: flex;
             flex-direction: column;
-            height: calc(100% - 60px);
+            height: 100%;
         }
 
         .tab-buttons {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             background-color: #333;
-            margin-bottom: 10px;
             transition: .3s;
         }
 
         .tab-buttons button {
-            padding: 20px;
+            padding: 5px;
             color: white;
             background-color: #333;
             border: none;
@@ -103,6 +102,29 @@
         .spaceright {
             background: blue;
         }
+        @media screen and (min-width: 1024px) {
+
+        }
+
+        @media screen and (min-width: 1200px) {
+
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 979px) {
+  
+        }
+
+        @media screen and (max-width: 767px) {
+
+        }
+
+        @media screen and (max-device-width: 480px) {
+
+        .frame {
+            padding: 10px;
+        }
+        }
+        
     </style>
 </head>
 <body>
@@ -110,7 +132,7 @@
         <div class="tabs">
             <div class="tab-buttons">
                 <button class="active" onclick="showTab(0)">首頁</button>
-                <button onclick="showTab(1)">活動概要🇨🇦</button>
+                <button onclick="showTab(1)">活動概要</button>
                 <button onclick="showTab(2)">咖啡廳應援</button>
                 <button onclick="showTab(3)">信徒創作募集</button>
                 <button onclick="showTab(4)">企劃團隊</button>
