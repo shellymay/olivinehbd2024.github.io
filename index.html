@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twemoji-colr-font@15.0.3/twemoji.min.css">
     <style>
+
+
         * {
             margin: 0;
             padding: 0;
@@ -37,6 +39,8 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .tab-buttons {
@@ -102,20 +106,29 @@
         .spaceright {
             background: blue;
         }
-        @media screen and (min-width: 1024px) {
-
-        }
 
         @media screen and (min-width: 1200px) {
-
+            .tabs {
+                max-width: 1140px;
+        }
         }
 
-        @media screen and (min-width: 768px) and (max-width: 979px) {
-  
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            .tabs {
+                max-width: 960px;
+        }
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 767px)  {
+            .tabs {
+                max-width: 720px;
+        }
+        }
 
+        @media screen and (max-width: 576px)  {
+            .tabs {
+                max-width: 540px;
+        }
         }
 
         @media screen and (max-device-width: 480px) {
