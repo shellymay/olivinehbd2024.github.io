@@ -250,6 +250,7 @@ function showTab(index) {
     const starBar = document.querySelector('.starbar');
     const cardgreen = document.querySelector('.cardgreen');
     const cardlace = document.querySelector('.cardlace');
+    const ribbon = document.querySelector('.ribbon');
 
     buttons.forEach((button, i) => {
         button.classList.remove('active');
@@ -277,30 +278,35 @@ function showTab(index) {
             buttonSwitch.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(2deg)';
             cardlace.style.transform = 'rotate(-2deg)';
+            ribbon.style.transform = 'rotate(5deg) scale(2, 1)';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 2fr 1fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(-3deg)';
             cardlace.style.transform = 'rotate(3deg)';
+            ribbon.style.transform = 'rotate(-3deg) scale(2, 1)';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 2fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(3deg)';
             cardlace.style.transform = 'rotate(-1deg)';
+            ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 2fr 1fr';
             cardgreen.style.transform = 'rotate(-2deg)';
             cardlace.style.transform = 'rotate(2deg)';
+            ribbon.style.transform = 'rotate(-2deg) scale(2, 1)';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 2fr';
             cardgreen.style.transform = 'rotate(1deg)';
             cardlace.style.transform = 'rotate(-1deg)';
+            ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
             break;
     }
 
