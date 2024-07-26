@@ -67,7 +67,8 @@
             position: absolute;
             background: #f0cea5;
             top: calc( 50vh - 26vh);
-            transform: rotate(8deg) scale(2, 1);
+            transform: rotate(5deg) scale(2, 1);
+            transition: .3s;
         }
 
         .bgcard{
@@ -79,6 +80,7 @@
             right:calc( 50vw - 675px );
             margin-top: 20px;
             filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
+            transition: .3s;
         }
 
         .bgcard.cardlace{
@@ -126,8 +128,8 @@
             height: 100%;
             overflow: hidden;
             position: relative;
-            border: 2.5px solid #333;
-            margin-top: calc(10px - 1.5px);
+            border: 2px solid #333;
+            margin-top: calc(15px - 1px);
             border-radius: 40px;
         }
 
@@ -153,7 +155,7 @@
         .starbar {
             position: absolute;
             width: 100%;
-            height: 20px;
+            height: 30px;
             display: grid;
             grid-template-columns: 0fr 2fr 4fr;
             transition: .6s;
@@ -162,7 +164,9 @@
         }
 
         .star {
-            text-align: center;
+            background: url(images/star.svg) no-repeat center/contain;
+            height: 30px;
+            filter: drop-shadow(0 0px 3px white);
         }
 
 
@@ -223,7 +227,7 @@
             </div>
             <div class="starbar">
                 <div class="spaceleft"></div>
-                <div class="star">✧</div>
+                <div class="star"></div>
                 <div class="spaceright"></div>
             </div>
             <div class="tab-contents">
@@ -244,6 +248,8 @@ function showTab(index) {
     const buttons = document.querySelectorAll('.tab-buttons button');
     const contents = document.querySelectorAll('.tab-content');
     const starBar = document.querySelector('.starbar');
+    const cardgreen = document.querySelector('.cardgreen');
+    const cardlace = document.querySelector('.cardlace');
 
     buttons.forEach((button, i) => {
         button.classList.remove('active');
@@ -269,22 +275,32 @@ function showTab(index) {
         case 0:
             starBar.style.gridTemplateColumns = '0fr 2fr 4fr';
             buttonSwitch.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
+            cardgreen.style.transform = 'rotate(2deg)';
+            cardlace.style.transform = 'rotate(-2deg)';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 2fr 1fr 1fr 1fr';
+            cardgreen.style.transform = 'rotate(-3deg)';
+            cardlace.style.transform = 'rotate(3deg)';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 2fr 1fr 1fr';
+            cardgreen.style.transform = 'rotate(3deg)';
+            cardlace.style.transform = 'rotate(-1deg)';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 2fr 1fr';
+            cardgreen.style.transform = 'rotate(-2deg)';
+            cardlace.style.transform = 'rotate(2deg)';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 2fr';
+            cardgreen.style.transform = 'rotate(1deg)';
+            cardlace.style.transform = 'rotate(-1deg)';
             break;
     }
 
