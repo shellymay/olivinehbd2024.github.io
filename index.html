@@ -133,6 +133,7 @@
             border-radius: 40px;
         }
 
+
         .tab-content {
             position: absolute;
             top: 100%;
@@ -146,6 +147,8 @@
             transition: top 0.5s, opacity 0.5s;
             background: rgb(255, 255, 0,.5);
         }
+
+        
 
         .tab-content.active {
             top: 0;
@@ -167,6 +170,45 @@
             background: url(images/star.svg) no-repeat center/contain;
             height: 30px;
             filter: drop-shadow(0 0px 3px white);
+        }
+
+        
+        .nextpage{
+            width: 58px;
+            height: 58px;
+            background: url(images/more.svg) no-repeat center/contain;
+            position: absolute;
+            right: calc(50% - 29px);
+            top: calc(100% - 38px);
+            animation-name: arrowdown;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            filter: drop-shadow(0 0px 3px white);
+        }
+
+        @keyframes arrowdown {
+  0%   {top: calc(100% - 38px);}
+  50%  {top: calc(100% - 53px);}
+  100% {top: calc(100% - 38px);}
+}
+
+        .decostar{
+
+            width: 80px;
+            height: 80px;
+            background: url(images/decostar.svg) no-repeat center/contain;
+            position: absolute;
+        }
+
+        .leftstar{
+            top: 15%;
+  left: calc(0% - 39px);
+        }
+
+        .rightstar{
+            bottom: 15%;
+  left: calc(100% - 41px);
         }
 
 
@@ -237,6 +279,9 @@
                 <div class="tab-content">Tab 4 Content</div>
                 <div class="tab-content">Tab 5 Content</div>
             </div>
+            <div class="nextpage"></div>
+            <div class="decostar leftstar"></div>
+            <div class="decostar rightstar"></div>
         </div>
     </div>
 
@@ -251,6 +296,7 @@ function showTab(index) {
     const cardgreen = document.querySelector('.cardgreen');
     const cardlace = document.querySelector('.cardlace');
     const ribbon = document.querySelector('.ribbon');
+    const nextpage = document.querySelector('.nextpage');
 
     buttons.forEach((button, i) => {
         button.classList.remove('active');
@@ -279,6 +325,7 @@ function showTab(index) {
             cardgreen.style.transform = 'rotate(2deg)';
             cardlace.style.transform = 'rotate(-2deg)';
             ribbon.style.transform = 'rotate(5deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
@@ -286,6 +333,7 @@ function showTab(index) {
             cardgreen.style.transform = 'rotate(-3deg)';
             cardlace.style.transform = 'rotate(3deg)';
             ribbon.style.transform = 'rotate(-3deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -293,6 +341,7 @@ function showTab(index) {
             cardgreen.style.transform = 'rotate(3deg)';
             cardlace.style.transform = 'rotate(-1deg)';
             ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -300,6 +349,7 @@ function showTab(index) {
             cardgreen.style.transform = 'rotate(-2deg)';
             cardlace.style.transform = 'rotate(2deg)';
             ribbon.style.transform = 'rotate(-2deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -307,6 +357,7 @@ function showTab(index) {
             cardgreen.style.transform = 'rotate(1deg)';
             cardlace.style.transform = 'rotate(-1deg)';
             ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/top.svg) no-repeat center/contain';
             break;
     }
 
