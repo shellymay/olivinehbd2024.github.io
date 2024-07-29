@@ -145,7 +145,7 @@
             font-size: 24px;
             opacity: 0;
             transition: top 0.5s, opacity 0.5s;
-            background: rgb(255, 255, 0,.5);
+            //background: rgb(255, 255, 0,.5);
         }
 
         
@@ -208,7 +208,7 @@
         }
 
         .rightstar{
-            bottom: 16%;
+            bottom: 12%;
   left: calc(100% - 41px);
         }
 
@@ -234,6 +234,21 @@
         @media screen and (max-width: 576px)  {
             .tabs {
                 max-width: 540px;
+                
+        }
+        
+        .ribbon, .bgcard{
+            display: none;
+        }
+
+        .tab-buttons button{
+            font-size: 0;
+            background: url(images/onestar.svg) no-repeat center/contain;
+
+        }
+        .tab-buttons button.active {
+            font-size: 13px;
+            background: url() no-repeat center/contain;
         }
         }
 
@@ -244,6 +259,10 @@
         }
         .tabs {
             height: calc(100% - 60px);
+        }
+
+        .ribbon, .bgcard{
+            display: none;
         }
         }
         
@@ -330,7 +349,7 @@ function showTab(index) {
             ribbon.style.transform = 'rotate(5deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '16%';
-            rightstar.style.bottom = '16%';
+            rightstar.style.bottom = '12%';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
@@ -340,7 +359,7 @@ function showTab(index) {
             ribbon.style.transform = 'rotate(-3deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '32%';
-            rightstar.style.bottom = '32%';
+            rightstar.style.bottom = '28%';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -350,7 +369,7 @@ function showTab(index) {
             ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '48%';
-            rightstar.style.bottom = '48%';
+            rightstar.style.bottom = '44%';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -360,7 +379,7 @@ function showTab(index) {
             ribbon.style.transform = 'rotate(-2deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '64%';
-            rightstar.style.bottom = '64%';
+            rightstar.style.bottom = '60%';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -370,7 +389,7 @@ function showTab(index) {
             ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
             nextpage.style.background = 'url(images/top.svg) no-repeat center/contain';
             leftstar.style.top = '80%';
-            rightstar.style.bottom = '80%';
+            rightstar.style.bottom = '76%';
             break;
     }
 
