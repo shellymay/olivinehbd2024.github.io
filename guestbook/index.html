@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Guest Book</h2>
+        <form id="guestForm">
+            <input type="text" id="nickname" placeholder="Your nickname" required>
+            <textarea id="message" placeholder="Your message" required></textarea>
+            <div class="emojis">
+                <img src="images/cat-badge.png" title=":cat-badge:" class="emoji">
+                <img src="images/cat-toy.png" title=":cat-toy:" class="emoji">
+                <img src="images/cake.png" title=":cake:" class="emoji">
+                <img src="images/pray.png" title=":pray:" class="emoji">
+                <img src="images/olivine-smile.png" title=":olivine-smile:" class="emoji">
+            </div>
+            <button type="submit">Send</button>
+        </form>
+        <div id="messages"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
