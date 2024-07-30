@@ -35,7 +35,7 @@
             width: 100vw;
             height: 100vh;
             border: 10px solid transparent;
-            padding: 20px;
+            padding: 0px 10px 10px 10px;
 
         }
         .bg{
@@ -74,9 +74,9 @@
         .bgcard{
 
             width: 1350px;
-            height: 750px; 
+            height: 800px; 
             position: absolute;  
-            top: calc( 50vh - 375px);
+            top: calc( 50vh - 400px);
             right:calc( 50vw - 675px );
             margin-top: 20px;
             filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
@@ -110,6 +110,7 @@
             grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             transition: .3s;
             min-height: 30px;
+            padding: 5px;
         }
 
         .tab-buttons button {
@@ -118,11 +119,26 @@
             background-color: transparent;
             border: none;
             cursor: pointer;
+            font-size: 0;
         }
 
-        .tab-buttons button.active {
-            background-color: transparent;
+        .tab-buttons button:nth-of-type(1){
+            background: url(images/tab1.svg) no-repeat center/contain;
         }
+        .tab-buttons button:nth-of-type(2){
+            background: url(images/tab2.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(3){
+            background: url(images/tab3.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(4){
+            background: url(images/tab4.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(5){
+            background: url(images/tab5.svg) no-repeat center/contain;
+        }
+
+
 
         .tab-contents {
             height: 100%;
@@ -241,29 +257,19 @@
             display: none;
         }
 
-        .tab-buttons button{
-            font-size: 0;
-            background: url(images/onestar.svg) no-repeat center/contain;
-
+        .frame{
+            padding: 0px 20px 40px 20px;
         }
-        .tab-buttons button.active {
-            font-size: 13px;
-            background: url() no-repeat center/contain;
-        }
+        .tab-buttons button {
+    background-size: 80% !important;
         }
 
         @media screen and (max-device-width: 480px) {
 
-        .frame {
-            padding: 10px;
-        }
         .tabs {
             height: calc(100% - 60px);
         }
 
-        .ribbon, .bgcard{
-            display: none;
-        }
         }
         
     </style>
