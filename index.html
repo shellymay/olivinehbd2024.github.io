@@ -239,7 +239,7 @@
         }
         .tab-content1{
             grid-template-columns: repeat(10, 1fr);
-             grid-template-rows: repeat(8, 1fr);
+             grid-template-rows: repeat(18, 1fr);
         }
 
 
@@ -247,48 +247,51 @@
             grid-column-start: 1;
             grid-column-end: 6;
             grid-row-start: 1;
-            grid-row-end: 9;
+            grid-row-end: 19;
         }
 
         .tab-content1 .box2{
             grid-column-start: 6;
             grid-column-end: 11;
-            grid-row-start: 1;
-            grid-row-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 6;
             background: url(images/logo.png) no-repeat center/contain;
         }
 
         .tab-content1 .box3{
             grid-column-start: 6;
             grid-column-end: 11;
-            grid-row-start: 3;
-            grid-row-end: 4;
+            grid-row-start: 6;
+            grid-row-end: 8;
             background: url(images/text1.svg) no-repeat center/contain;
         }
         .tab-content1 .box4{
             grid-column-start: 6;
             grid-column-end: 11;
-            grid-row-start: 4;
-            grid-row-end: 5;
+            grid-row-start: 8;
+            grid-row-end: 10;
             background: url(images/text2.svg) no-repeat center/contain;
         }
         .tab-content1 .box5{
             grid-column-start: 6;
-            grid-column-end: 9;
-            grid-row-start: 5;
-            grid-row-end: 8;
+            grid-column-end: 10;
+            grid-row-start: 10;
+            grid-row-end: 18;
+            z-index: 1;
         }
         .tab-content1 .box6{
             grid-column-start: 9;
             grid-column-end: 11;
-            grid-row-start: 5;
-            grid-row-end: 8;
+            grid-row-start: 10;
+            grid-row-end: 18;
         }
-        .tab-content1 .box7{
-            grid-column-start: 6;
-            grid-column-end: 11;
-            grid-row-start: 8;
-            grid-row-end: 9;
+
+
+        .message{
+            border: none;
+  overflow: hidden;
+  height: 100%;
+  height: 100%;
         }
 
 
@@ -330,6 +333,74 @@
     border-radius: 0;
     border-width: 2px 0 0 0;
 }
+
+.tab-buttons button{
+    background: url(images/onestar.svg) no-repeat center/contain !important;
+}
+
+.tab-buttons button.active:nth-of-type(1){
+            background: url(images/tab1.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(2){
+            background: url(images/tab2.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(3){
+            background: url(images/tab3.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(4){
+            background: url(images/tab4.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(5){
+            background: url(images/tab5.svg) no-repeat center/contain !important;
+        }
+
+        .tab-content1{
+            grid-template-columns: repeat(1, 1fr);
+             grid-template-rows: repeat(14, 1fr);
+        }
+
+
+        .tab-content1 .box1{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 9;
+        }
+
+        .tab-content1 .box2{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 7;
+            grid-row-end: 10;
+        }
+
+        .tab-content1 .box3{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 10;
+            grid-row-end: 12;
+        }
+        .tab-content1 .box4{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 12;
+            grid-row-end: 14;
+        }
+        .tab-content1 .box5{
+            grid-column-start: 6;
+            grid-column-end: 9;
+            grid-row-start: 5;
+            grid-row-end: 8;
+            display: none;
+        }
+        .tab-content1 .box6{
+            grid-column-start: 9;
+            grid-column-end: 11;
+            grid-row-start: 5;
+            grid-row-end: 8;
+            display: none;
+        }
+
 
     }
 
@@ -374,9 +445,11 @@
                     <div class="box2"></div>
                     <div class="box3"></div>
                     <div class="box4"></div>
-                    <div class="box5"></div>
+                    <div class="box5">
+                        <iframe class="message" src="https://addddddo.site/guestbook7/index.html" width="100%"></iframe>
+                    </div>
                     <div class="box6"></div>
-                    <div class="box7"></div>
+
 
                 </div>
                 <div class="tab-content tab-content2">Tab 2 Content</div>
