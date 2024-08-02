@@ -44,6 +44,7 @@
             position: absolute;
             display: grid;
             grid-template-columns: 1fr 1000px 1fr;
+            overflow: hidden;
 
         }
 
@@ -105,6 +106,8 @@
             margin-left: auto;
             margin-right: auto;
             position: relative;
+            top: 50%;
+    transform: translateY(-50%);
         }
 
         .tab-buttons {
@@ -248,6 +251,8 @@
             grid-column-end: 6;
             grid-row-start: 1;
             grid-row-end: 19;
+            -webkit-mask: url(images/window1.svg) no-repeat center center / contain;
+             mask: url(images/window1.svg) no-repeat center center / contain;
         }
 
         .tab-content1 .box2{
@@ -298,6 +303,7 @@
         @media screen and (min-width: 1200px) {
             .tabs {
                 max-width: 1140px;
+                max-height: 897px;
         }
         }
 
