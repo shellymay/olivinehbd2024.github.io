@@ -8,6 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twemoji-colr-font@15.0.3/twemoji.min.css">
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'bcs5gvc',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
     <style>
 
 
@@ -83,8 +93,11 @@
             transition: .3s;
             transition-property: transform;
         }
+        .bgcard.cardlace-m{
+            display:none;
+        }
 
-        .bgcard.cardlace{
+        .bgcard.cardlace,.bgcard.cardlace-m{
             border-image: url('images/lacecard.png') 25 fill / 25px round;
             transform: rotate(-2deg);
 
@@ -96,6 +109,51 @@
             transform: rotate(2deg);
 
         }
+
+        .main-visual{
+            display: block;
+    width: 630px;
+    height: 91%;
+    max-height: 853px;
+    background-color: greenyellow;
+    clip-path: ellipse(100% 100% at 0% 50%);
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-93%) translateY(-46%);
+    border-radius: 40px 0 0 40px;
+    transition: .3s;
+    animation-name: main-visual-in;
+            animation-duration: .7s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+        
+
+        @keyframes main-visual-in {
+  0%   {clip-path: ellipse(0 100% at 0% 50%);}
+  100% {clip-path: ellipse(100% 100% at 0% 50%);}
+}
+
+        .main-visual-m{
+            display: none;
+    width: 100vw;
+    height: 56%;
+    background-color: greenyellow;
+    clip-path: ellipse(100% 100% at 50% 0%);
+    transition: .3s;
+    animation-name: main-visualm-in;
+            animation-duration: .7s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+        
+
+        @keyframes main-visualm-in {
+  0%   {clip-path: ellipse(100% 0 at 50% 0%);}
+  100% {clip-path: ellipse(100% 100% at 50% 0%);}
+}
+
 
         .tabs {
             display: flex;
@@ -221,6 +279,7 @@
             background: url(images/decostar.svg) no-repeat center/contain;
             position: absolute;
             transition: .3s;
+            z-index: 1;
         }
 
         .leftstar{
@@ -239,55 +298,66 @@
             height: 100%;
         }
         .tab-content1{
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(36, 1fr);
              grid-template-rows: repeat(18, 1fr);
         }
 
 
         .tab-content1 .box1{
             grid-column-start: 1;
-            grid-column-end: 6;
+            grid-column-end: 20;
             grid-row-start: 1;
             grid-row-end: 19;
             clip-path: ellipse(100% 100% at 0% 50%);
         }
 
         .tab-content1 .box2{
-            grid-column-start: 6;
-            grid-column-end: 11;
+            grid-column-start: 19;
+            grid-column-end: 36;
             grid-row-start: 2;
             grid-row-end: 6;
             background: url(images/logo.png) no-repeat center/contain;
         }
 
         .tab-content1 .box3{
-            grid-column-start: 6;
-            grid-column-end: 11;
+            grid-column-start: 19;
+            grid-column-end: 36;
             grid-row-start: 6;
             grid-row-end: 8;
             background: url(images/text1.svg) no-repeat center/contain;
         }
         .tab-content1 .box4{
-            grid-column-start: 6;
-            grid-column-end: 11;
+            grid-column-start: 19;
+            grid-column-end: 36;
             grid-row-start: 8;
             grid-row-end: 10;
             background: url(images/text2.svg) no-repeat center/contain;
+            z-index: 1;
         }
         .tab-content1 .box5{
-            grid-column-start: 6;
-            grid-column-end: 11;
+            grid-column-start: 18;
+            grid-column-end: 36;
             grid-row-start: 10;
             grid-row-end: 18;
             z-index: 1;
-            // mask: linear-gradient(0deg, #000 0%, transparent);
+            mask: linear-gradient(0deg, #000 90%,transparent 95%);
             background:transparent;
         }
         .tab-content1 .box6{
-            grid-column-start: 8;
-            grid-column-end: 11;
+            grid-column-start: 18;
+            grid-column-end: 36;
             grid-row-start: 10;
             grid-row-end: 17;
+            font-family: "amandine", sans-serif;
+font-weight: 500;
+font-style: italic;
+font-size: 40px;
+  color: rgb(174, 219, 163);
+  background: transparent;
+  line-height: 45px;
+  text-align: right;
+  padding-top: 10%;
+  padding-right: 15px;
         }
 
 
@@ -323,10 +393,28 @@
                 max-width: 540px;
                 
         }
-        
         .bg{
+            background: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f0cea5 0, #f0cea5 14px);
+            z-index: -2;
+        }
+
+        .bg div:not(.main-visual-m,.bgcard.cardlace-m){
             display: none;
         }
+
+
+        .main-visual-m{
+            display: block;
+        }
+        .bgcard.cardlace-m{
+            border-image: url(images/lacecard.png) 25 fill / 0px 0 25px 0 round;
+    transform: rotate(0deg);
+    display: block;
+    top: 0;
+    margin-top: 0;
+    z-index: -1;
+}
+
 
         .frame{
             padding: 0px 10px 40px 10px;
@@ -429,6 +517,9 @@
         <div class="ribbon"></div>
         <div class="bgcard cardgreen"></div>
         <div class="bgcard cardlace"></div>
+        <div class="bgcard cardlace-m"></div>
+        <div class="main-visual"></div>
+        <div class="main-visual-m"></div>
     </div>
     <div class="frame">
 
@@ -454,7 +545,7 @@
                     <div class="box5">
                         <iframe class="message" src="https://addddddo.site/guestbook7/index.html" width="100%"></iframe>
                     </div>
-                    <div class="box6"></div>
+                    <div class="box6">Leave a<br/> Birthday Wish<br/> for<br/> Olivine.</div>
 
 
                 </div>
@@ -483,6 +574,9 @@ function showTab(index) {
     const nextpage = document.querySelector('.nextpage');
     const leftstar = document.querySelector('.leftstar');
     const rightstar = document.querySelector('.rightstar');
+    const mainVisual = document.querySelector('.main-visual');
+    const mainVisualM = document.querySelector('.main-visual-m');
+    
 
     buttons.forEach((button, i) => {
         button.classList.remove('active');
@@ -514,6 +608,8 @@ function showTab(index) {
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '16%';
             rightstar.style.bottom = '12%';
+            mainVisual.style.clipPath = 'ellipse(100% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 100% at 50% 0%)';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
@@ -524,6 +620,8 @@ function showTab(index) {
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '32%';
             rightstar.style.bottom = '28%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -534,6 +632,8 @@ function showTab(index) {
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '48%';
             rightstar.style.bottom = '44%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -544,6 +644,8 @@ function showTab(index) {
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '64%';
             rightstar.style.bottom = '60%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -554,6 +656,8 @@ function showTab(index) {
             nextpage.style.background = 'url(images/top.svg) no-repeat center/contain';
             leftstar.style.top = '80%';
             rightstar.style.bottom = '76%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             break;
     }
 
