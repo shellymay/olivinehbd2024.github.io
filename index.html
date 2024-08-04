@@ -317,6 +317,7 @@
             grid-row-start: 2;
             grid-row-end: 6;
             background: url(images/logo.png) no-repeat center/contain;
+            z-index: 1;
         }
 
         .tab-content1 .box3{
@@ -325,6 +326,7 @@
             grid-row-start: 6;
             grid-row-end: 8;
             background: url(images/text1.svg) no-repeat center/contain;
+            z-index: 1;
         }
         .tab-content1 .box4{
             grid-column-start: 19;
@@ -391,6 +393,8 @@ font-size: 40px;
         @media screen and (max-width: 576px)  {
             .tabs {
                 max-width: 540px;
+                     top: 0; 
+     transform: translateY(0);
                 
         }
         .bg{
@@ -405,6 +409,7 @@ font-size: 40px;
 
         .main-visual-m{
             display: block;
+            height: 52%;
         }
         .bgcard.cardlace-m{
             border-image: url(images/lacecard.png) 25 fill / 0px 0 25px 0 round;
@@ -413,6 +418,8 @@ font-size: 40px;
     top: 0;
     margin-top: 0;
     z-index: -1;
+    height: 85%;
+    transition-property: height;
 }
 
 
@@ -574,6 +581,7 @@ function showTab(index) {
     const starBar = document.querySelector('.starbar');
     const cardgreen = document.querySelector('.cardgreen');
     const cardlace = document.querySelector('.cardlace');
+    const cardlaceM = document.querySelector('.cardlace-m');
     const ribbon = document.querySelector('.ribbon');
     const nextpage = document.querySelector('.nextpage');
     const leftstar = document.querySelector('.leftstar');
@@ -614,6 +622,7 @@ function showTab(index) {
             rightstar.style.bottom = '12%';
             mainVisual.style.clipPath = 'ellipse(100% 100% at 0% 50%)';
             mainVisualM.style.clipPath = 'ellipse(100% 100% at 50% 0%)';
+            cardlaceM.style.height = '85%';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
@@ -626,6 +635,7 @@ function showTab(index) {
             rightstar.style.bottom = '28%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
             mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -638,6 +648,7 @@ function showTab(index) {
             rightstar.style.bottom = '44%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
             mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -650,6 +661,7 @@ function showTab(index) {
             rightstar.style.bottom = '60%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
             mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -662,6 +674,7 @@ function showTab(index) {
             rightstar.style.bottom = '76%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
             mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
             break;
     }
 
