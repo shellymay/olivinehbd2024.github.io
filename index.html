@@ -28,9 +28,6 @@ $(".messagebtn").click(function(){
 });
 });
 
-$(window).resize( function (){
-     location.reload() 
-     });
 
 
 </script>
@@ -154,10 +151,10 @@ $(window).resize( function (){
         .main-visual-m{
             display: none;
     width: 100vw;
-    height: 56%;
+    height: 100vh;
     background-color: greenyellow;
-    clip-path: ellipse(100% 100% at 50% 0%);
-    transition: .3s;
+    clip-path: ellipse(100% 54% at 50% 0%);
+    
     animation-name: main-visualm-in;
             animation-duration: .7s;
             animation-iteration-count: 1;
@@ -445,7 +442,6 @@ font-size: 40px;
 
         .main-visual-m{
             display: block;
-            height: 52%;
         }
         .bgcard.cardlace-m{
             border-image: url(images/lacecard.png) 25 fill / 0px 0 25px 0 round;
@@ -456,11 +452,12 @@ font-size: 40px;
     z-index: -1;
     height: 85%;
     transition-property: height;
+    transition: .3s;
 }
 
 .main-visual-m.close{
-    height: 100vh;
     clip-path: ellipse(100% 100% at 50% 50%);
+
 }
 
         .frame{
@@ -581,12 +578,14 @@ font-size: 40px;
     grid-row-end: 14;
             display: none;
             opacity:0;
-            mask: linear-gradient(0deg, #000 50%,transparent 95%);
+            mask: linear-gradient(0deg, #000 80%,transparent 95%);
             transition: .3s;
+            pointer-events: auto;
         }
 
         .tab-content1 .box5.close{
             opacity:1;
+            z-index: 99;
         }
         .tab-content1 .box6{
             grid-column-start: 1;
@@ -718,7 +717,7 @@ function showTab(index) {
             leftstar.style.top = '16%';
             rightstar.style.bottom = '12%';
             mainVisual.style.clipPath = 'ellipse(100% 100% at 0% 50%)';
-            mainVisualM.style.clipPath = 'ellipse(100% 100% at 50% 0%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 54% at 50% 0%)';;
             cardlaceM.style.height = '85%';
             break;
         case 1:
