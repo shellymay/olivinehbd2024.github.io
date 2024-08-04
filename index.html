@@ -18,6 +18,22 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+$(document).ready(function(){
+$(".messagebtn").click(function(){
+  $(".tab-content1 .box5,.tab-content1 .box6").toggle();
+  $( ".messagebtn,.main-visual-m,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
+  
+});
+});
+
+$(window).resize( function (){
+     location.reload() 
+     });
+
+
+</script>
     <style>
 
 
@@ -301,6 +317,26 @@
             grid-template-columns: repeat(36, 1fr);
              grid-template-rows: repeat(18, 1fr);
         }
+        .messagebtn{
+            display: none;
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    border-radius: 4px;
+  z-index: 1;
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,.2));
+  border: none;
+  top: 20px;
+  right: 10px;
+  background: url(images/open.svg) no-repeat center/60%;
+            background-color: black;
+        }
+
+        .messagebtn.close{
+            background: url(images/close.svg) no-repeat center/60%;
+            background-color: black;
+
+        }
 
 
         .tab-content1 .box1{
@@ -422,6 +458,10 @@ font-size: 40px;
     transition-property: height;
 }
 
+.main-visual-m.close{
+    height: 100vh;
+    clip-path: ellipse(100% 100% at 50% 50%);
+}
 
         .frame{
             padding: 0px 10px 40px 10px;
@@ -463,6 +503,22 @@ font-size: 40px;
              grid-template-rows: repeat(14, 1fr);
         }
 
+        .messagebtn{
+            display:block;
+            animation-name: messagebtn;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            cursor: pointer;
+        }
+        
+
+        @keyframes messagebtn{
+  0%   {transform: scale(1);}
+  50%   {transform: scale(.85);}
+  100% {transform: scale(1);}
+}
+
 
         .tab-content1 .box1{
             grid-column-start: 1;
@@ -470,6 +526,12 @@ font-size: 40px;
             grid-row-start: 1;
             grid-row-end: 9;
             clip-path: ellipse(100% 100% at 50% 0%);
+            opacity:1;
+            transition: .3s;
+        }
+
+        .tab-content1 .box1.close{
+            opacity:0;
         }
 
         .tab-content1 .box2{
@@ -477,6 +539,13 @@ font-size: 40px;
             grid-column-end: 2;
             grid-row-start: 7;
             grid-row-end: 10;
+            opacity:1;
+            transition: .3s;
+            
+        }
+
+        .tab-content1 .box2.close{
+            opacity:0;
         }
 
         .tab-content1 .box3{
@@ -484,26 +553,53 @@ font-size: 40px;
             grid-column-end: 2;
             grid-row-start: 10;
             grid-row-end: 12;
+            opacity:1;
+            transition: .3s;
         }
+
+        .tab-content1 .box3.close{
+            opacity:0;
+        }
+
         .tab-content1 .box4{
             grid-column-start: 1;
             grid-column-end: 2;
             grid-row-start: 12;
             grid-row-end: 14;
+            opacity:1;
+            transition: .3s;
         }
+
+        .tab-content1 .box4.close{
+            opacity:0;
+        }
+
         .tab-content1 .box5{
-            grid-column-start: 6;
-            grid-column-end: 9;
-            grid-row-start: 5;
-            grid-row-end: 8;
+            grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 14;
             display: none;
+            opacity:0;
+            mask: linear-gradient(0deg, #000 50%,transparent 95%);
+            transition: .3s;
+        }
+
+        .tab-content1 .box5.close{
+            opacity:1;
         }
         .tab-content1 .box6{
-            grid-column-start: 9;
-            grid-column-end: 11;
-            grid-row-start: 5;
-            grid-row-end: 8;
+            grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 14;
             display: none;
+            opacity:0;
+            transition: .3s;
+            color:white;
+        }
+        .tab-content1 .box6.close{
+            opacity:1;
         }
 
 
@@ -549,6 +645,7 @@ font-size: 40px;
             </div>
             <div class="tab-contents">
                 <div class="tab-content tab-content1 active">
+                    <button class="messagebtn"></button>
                     <div class="box1"></div>
                     <div class="box2"></div>
                     <div class="box3"></div>
