@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>翠色聖禱祭 ∥ 非官方奧利文生日慶祝應援企劃2024</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -529,6 +529,7 @@ font-size: 40px;
 
         .tab-content1 .box1.close{
             opacity:0;
+            display: none;
         }
 
         .tab-content1 .box2{
@@ -543,6 +544,7 @@ font-size: 40px;
 
         .tab-content1 .box2.close{
             opacity:0;
+            display: none;
         }
 
         .tab-content1 .box3{
@@ -552,10 +554,12 @@ font-size: 40px;
             grid-row-end: 12;
             opacity:1;
             transition: .3s;
+
         }
 
         .tab-content1 .box3.close{
             opacity:0;
+            display: none;
         }
 
         .tab-content1 .box4{
@@ -569,6 +573,7 @@ font-size: 40px;
 
         .tab-content1 .box4.close{
             opacity:0;
+            display: none;
         }
 
         .tab-content1 .box5{
@@ -581,6 +586,7 @@ font-size: 40px;
             mask: linear-gradient(0deg, #000 80%,transparent 95%);
             transition: .3s;
             pointer-events: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .tab-content1 .box5.close{
@@ -650,7 +656,7 @@ font-size: 40px;
                     <div class="box3"></div>
                     <div class="box4"></div>
                     <div class="box5">
-                        <iframe class="message" src="https://addddddo.site/guestbook7/index.html" width="100%"></iframe>
+                        <iframe class="message" src="https://addddddo.site/guestbook7/index.html" width="100%" scrolling="yes"></iframe>
                     </div>
                     <div class="box6">Leave a<br/> Birthday Wish<br/> for<br/> Olivine.</div>
 
@@ -811,6 +817,9 @@ function showTab(index) {
 
         window.addEventListener('touchstart', handleTouchStart);
         window.addEventListener('touchend', handleTouchEnd);
+        document.querySelector('iframe').addEventListener('touchstart',function(){
+            this.focus();
+        });
     </script>
 </body>
 </html>
