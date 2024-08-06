@@ -22,7 +22,7 @@
       <script>
 $(document).ready(function(){
 $(".messagebtn").click(function(){
-  $(".tab-content1 .box5,.tab-content1 .box6").toggle();
+ // $(".tab-content1 .box5,.tab-content1 .box6").toggle();
   $( ".messagebtn,.main-visual-m,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
   
 });
@@ -135,7 +135,7 @@ $(".messagebtn").click(function(){
     left: 50%;
     transform: translateX(-93%) translateY(-46%);
     border-radius: 40px 0 0 40px;
-    transition: .3s;
+    transition: 1s;
     animation-name: main-visual-in;
             animation-duration: .7s;
             animation-iteration-count: 1;
@@ -154,9 +154,11 @@ $(".messagebtn").click(function(){
     height: 100vh;
     background-color: greenyellow;
     clip-path: ellipse(100% 54% at 50% 0%);
+    transition: .3s;
+    transition-property: clip-path;
     
     animation-name: main-visualm-in;
-            animation-duration: .7s;
+            animation-duration: 1s;
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
         }
@@ -164,7 +166,7 @@ $(".messagebtn").click(function(){
 
         @keyframes main-visualm-in {
   0%   {clip-path: ellipse(100% 0 at 50% 0%);}
-  100% {clip-path: ellipse(100% 100% at 50% 0%);}
+  100% {clip-path: ellipse(100% 54% at 50% 0%);}
 }
 
 
@@ -583,8 +585,8 @@ font-size: 40px;
     grid-row-end: 14;
             display: none;
             opacity:0;
-            mask: linear-gradient(0deg, #000 80%,transparent 95%);
-            transition: .3s;
+            mask: linear-gradient(0deg, #000 60%,transparent 95%);
+            transition: .6s;
             pointer-events: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -592,6 +594,7 @@ font-size: 40px;
         .tab-content1 .box5.close{
             opacity:1;
             z-index: 99;
+            display: block;
         }
         .tab-content1 .box6{
             grid-column-start: 1;
@@ -600,11 +603,12 @@ font-size: 40px;
     grid-row-end: 14;
             display: none;
             opacity:0;
-            transition: .3s;
+            transition: .6s;
             color:white;
         }
         .tab-content1 .box6.close{
             opacity:1;
+            display: block;
         }
 
 
@@ -690,6 +694,13 @@ function showTab(index) {
     const rightstar = document.querySelector('.rightstar');
     const mainVisual = document.querySelector('.main-visual');
     const mainVisualM = document.querySelector('.main-visual-m');
+    const messagebtn = document.querySelector('.messagebtn');
+    const tabContent1Box1 = document.querySelector('.tab-content1 .box1');
+    const tabContent1Box2 = document.querySelector('.tab-content1 .box2');
+    const tabContent1Box3 = document.querySelector('.tab-content1 .box3');
+    const tabContent1Box4 = document.querySelector('.tab-content1 .box4');
+    const tabContent1Box5 = document.querySelector('.tab-content1 .box5');
+    const tabContent1Box6 = document.querySelector('.tab-content1 .box6');
     
 
     buttons.forEach((button, i) => {
@@ -736,8 +747,15 @@ function showTab(index) {
             leftstar.style.top = '32%';
             rightstar.style.bottom = '28%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
-            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -749,8 +767,15 @@ function showTab(index) {
             leftstar.style.top = '48%';
             rightstar.style.bottom = '44%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
-            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -762,8 +787,15 @@ function showTab(index) {
             leftstar.style.top = '64%';
             rightstar.style.bottom = '60%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
-            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -775,8 +807,15 @@ function showTab(index) {
             leftstar.style.top = '80%';
             rightstar.style.bottom = '76%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
-            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
             break;
     }
 
@@ -820,6 +859,21 @@ function showTab(index) {
         document.querySelector('iframe').addEventListener('touchstart',function(){
             this.focus();
         });
+
+
+        window.addEventListener("resize", () => {
+        const widthAbove1000 = window.innerWidth > 576;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let noRun = urlParams.get('noRun');
+
+        if (widthAbove1000 && noRun)
+          window.location.href = window.location.href.split("?")[0];
+
+        if (widthAbove1000 || noRun) return;
+
+        window.location.href = window.location.href + "?noRun=true";
+      });
     </script>
 </body>
 </html>
