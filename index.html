@@ -267,12 +267,12 @@ $(".messagebtn").click(function(){
 
         
         .nextpage{
-            width: 58px;
-            height: 58px;
+            width: 40px;
+            height: 40px;
             background: url(images/more.svg) no-repeat center/contain;
             position: absolute;
-            right: calc(50% - 29px);
-            top: calc(100% - 38px);
+            right: calc(50% - 20px);
+            top: calc(100% - 40px);
             animation-name: arrowdown;
             animation-duration: 2s;
             animation-iteration-count: infinite;
@@ -282,9 +282,9 @@ $(".messagebtn").click(function(){
         
 
         @keyframes arrowdown {
-  0%   {top: calc(100% - 38px);}
-  50%  {top: calc(100% - 53px);}
-  100% {top: calc(100% - 38px);}
+  0%   {transform: translateY(-10%);}
+  50%  {transform: translateY(0);}
+  100% {transform: translateY(-10%);}
 }
 
         .decostar{
