@@ -329,6 +329,7 @@ $(".messagebtn").click(function(){
   right: 10px;
   background: url(images/open.svg) no-repeat center/60%;
             background-color: black;
+            z-index: 100;
         }
 
         .messagebtn.close{
@@ -501,7 +502,7 @@ font-size: 40px;
             }
 
         .tab-content1{
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(20, 1fr);
              grid-template-rows: repeat(14, 1fr);
         }
 
@@ -523,8 +524,8 @@ font-size: 40px;
 
 
         .tab-content1 .box1{
-            grid-column-start: 1;
-            grid-column-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 20;
             grid-row-start: 1;
             grid-row-end: 9;
             clip-path: ellipse(100% 100% at 50% 0%);
@@ -538,8 +539,8 @@ font-size: 40px;
         }
 
         .tab-content1 .box2{
-            grid-column-start: 1;
-            grid-column-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 20;
             grid-row-start: 7;
             grid-row-end: 10;
             opacity:1;
@@ -553,8 +554,8 @@ font-size: 40px;
         }
 
         .tab-content1 .box3{
-            grid-column-start: 1;
-            grid-column-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 20;
             grid-row-start: 10;
             grid-row-end: 12;
             opacity:1;
@@ -568,8 +569,8 @@ font-size: 40px;
         }
 
         .tab-content1 .box4{
-            grid-column-start: 1;
-            grid-column-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 20;
             grid-row-start: 12;
             grid-row-end: 14;
             opacity:1;
@@ -582,13 +583,13 @@ font-size: 40px;
         }
 
         .tab-content1 .box5{
-            grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
+            grid-column-start: 2;
+    grid-column-end: 20;
+    grid-row-start: 1;
     grid-row-end: 14;
             display: none;
             opacity:0;
-            mask: linear-gradient(0deg, #000 60%,transparent 95%);
+            mask: linear-gradient(0deg, #000 30%,transparent 80%);
             transition: .6s;
             pointer-events: auto;
             -webkit-overflow-scrolling: touch;
@@ -600,8 +601,8 @@ font-size: 40px;
             display: block;
         }
         .tab-content1 .box6{
-            grid-column-start: 1;
-    grid-column-end: 2;
+            grid-column-start: 2;
+    grid-column-end: 20;
     grid-row-start: 7;
     grid-row-end: 14;
             display: none;
@@ -737,7 +738,7 @@ function showTab(index) {
             leftstar.style.top = '16%';
             rightstar.style.bottom = '12%';
             mainVisual.style.clipPath = 'ellipse(100% 100% at 0% 50%)';
-            mainVisualM.style.clipPath = 'ellipse(100% 54% at 50% 0%)';;
+            mainVisualM.style.clipPath = 'ellipse(100% 54% at 50% 0%)';
             cardlaceM.style.height = '85%';
             break;
         case 1:
@@ -750,6 +751,7 @@ function showTab(index) {
             leftstar.style.top = '32%';
             rightstar.style.bottom = '28%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
             messagebtn.classList.remove("close");
             mainVisualM.classList.remove("close");
@@ -770,6 +772,7 @@ function showTab(index) {
             leftstar.style.top = '48%';
             rightstar.style.bottom = '44%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
             messagebtn.classList.remove("close");
             mainVisualM.classList.remove("close");
@@ -790,6 +793,7 @@ function showTab(index) {
             leftstar.style.top = '64%';
             rightstar.style.bottom = '60%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
             messagebtn.classList.remove("close");
             mainVisualM.classList.remove("close");
@@ -810,6 +814,7 @@ function showTab(index) {
             leftstar.style.top = '80%';
             rightstar.style.bottom = '76%';
             mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
             cardlaceM.style.height = '100%';
             messagebtn.classList.remove("close");
             mainVisualM.classList.remove("close");
