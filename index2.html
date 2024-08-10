@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>翠色聖禱祭 ∥ 非官方奧利文生日慶祝應援企劃2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twemoji-colr-font@15.0.3/twemoji.min.css">
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'bcs5gvc',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+$(document).ready(function(){
+$(".messagebtn").click(function(){
+ // $(".tab-content1 .box5,.tab-content1 .box6").toggle();
+  $( ".messagebtn,.main-visual-m,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
+  
+});
+});
+
+
+
+</script>
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans TC","Twemoji", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 3px;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        div.loader{
+  background:url(images/close.svg) no-repeat;
+  background:url(images/decostar.svg) no-repeat;
+  background:url(images/gift.svg) no-repeat;
+  background:url(images/greencard-line.png) no-repeat;
+  background:url(images/lacecard-line.png) no-repeat;
+  background:url(images/logo.png) no-repeat;
+  background:url(images/more.svg) no-repeat;
+  background:url(images/onestar.svg) no-repeat;
+  background:url(images/open.svg) no-repeat;
+  background:url(images/star.svg) no-repeat;
+  background:url(images/tab1.svg) no-repeat;
+  background:url(images/tab2.svg) no-repeat;
+  background:url(images/tab3.svg) no-repeat;
+  background:url(images/tab4.svg) no-repeat;
+  background:url(images/tab5.svg) no-repeat;
+  background:url(images/text1.svg) no-repeat;
+  background:url(images/text2.svg) no-repeat;
+  background:url(images/top.svg) no-repeat;
+
+  margin-left:-10000px;
+}
+
+
+        .frame {
+            width: 100vw;
+            height: 100vh;
+            border: 10px solid transparent;
+            padding: 0px 10px 10px 10px;
+
+        }
+        .bg{
+            width: 100vw;
+            height: 100vh; 
+            position: absolute;
+            display: grid;
+            grid-template-columns: 1fr 1000px 1fr;
+            overflow: hidden;
+
+        }
+
+        .bg-L,.bg-R{
+            overflow: hidden;
+            position: relative;
+            background: repeating-linear-gradient(-45deg,transparent,transparent 12px,#f0cea5 0,#f0cea5 14px);
+            
+        }
+
+        .bg-L{
+            mask: linear-gradient(90deg, #000 10%, transparent);
+        }
+        .bg-R{
+            mask: linear-gradient(-90deg, #000 10%, transparent);
+        }
+
+        .ribbon{
+            width: 100vw;
+            height: 52vh; 
+            position: absolute;
+            background: #f0cea5;
+            top: calc( 50vh - 26vh);
+            transform: rotate(5deg) scale(2, 1);
+            transition: .3s;
+            transition-property: transform;
+        }
+
+        .bgcard{
+
+            width: 1350px;
+            height: 800px; 
+            position: absolute;  
+            top: calc( 50vh - 400px);
+            right:calc( 50vw - 675px );
+            margin-top: 20px;
+            // filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
+            transition: .3s;
+            transition-property: transform;
+        }
+        .bgcard.cardlace-m{
+            display:none;
+        }
+
+        .bgcard.cardlace,.bgcard.cardlace-m{
+            border-image: url('images/lacecard-line.png') 25 fill / 25px round;
+            transform: rotate(-2deg);
+
+        }
+
+        .bgcard.cardgreen{
+            border-image: url('images/greencard-line.png') 25 fill / 25px round;
+            opacity: .2;
+            transform: rotate(2deg);
+
+        }
+
+        .main-visual{
+            display: block;
+    width: 630px;
+    height: 91%;
+    max-height: 853px;
+    background-color: greenyellow;
+    clip-path: ellipse(100% 100% at 0% 50%);
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-93%) translateY(-46%);
+    border-radius: 40px 0 0 40px;
+    transition: 1s;
+    animation-name: main-visual-in;
+            animation-duration: .7s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+        
+
+        @keyframes main-visual-in {
+  0%   {clip-path: ellipse(0 100% at 0% 50%);}
+  100% {clip-path: ellipse(100% 100% at 0% 50%);}
+}
+
+        .main-visual-m{
+            display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: greenyellow;
+    clip-path: ellipse(100% 54% at 50% 0%);
+    transition: .3s;
+    transition-property: clip-path;
+    
+    animation-name: main-visualm-in;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+        
+
+        @keyframes main-visualm-in {
+  0%   {clip-path: ellipse(100% 0 at 50% 0%);}
+  100% {clip-path: ellipse(100% 54% at 50% 0%);}
+}
+
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 50%;
+    transform: translateY(-50%);
+        }
+
+        .tab-buttons {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            transition: .3s;
+            min-height: 30px;
+            padding: 5px;
+            gap: 5px;
+        }
+
+        .tab-buttons button {
+            padding: 5px;
+            color: black;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0;
+        }
+
+        .tab-buttons button:nth-of-type(1){
+            background: url(images/tab1.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(2){
+            background: url(images/tab2.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(3){
+            background: url(images/tab3.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(4){
+            background: url(images/tab4.svg) no-repeat center/contain;
+        }
+        .tab-buttons button:nth-of-type(5){
+            background: url(images/tab5.svg) no-repeat center/contain;
+        }
+
+
+
+        .tab-contents {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #333;
+            margin-top: calc(15px - 1px);
+            border-radius: 40px;
+        }
+
+
+        .tab-content {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            opacity: 0;
+            transition: top 0.5s, opacity 0.5s;
+            gap:8px;
+        }
+
+        
+
+        .tab-content.active {
+            top: 0;
+            opacity: 1;
+        }
+
+        .starbar {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            display: grid;
+            grid-template-columns: 0fr 2fr 4fr;
+            transition: .6s;
+            top: 30px;
+            z-index: 1;
+        }
+
+        .star {
+            background: url(images/star.svg) no-repeat center/contain;
+            height: 30px;
+            filter: drop-shadow(0 0px 3px white);
+        }
+
+        
+        .nextpage{
+            width: 40px;
+            height: 40px;
+            background: url(images/more.svg) no-repeat center/contain;
+            position: absolute;
+            right: calc(50% - 20px);
+            top: calc(100% - 30px);
+            animation-name: arrowdown;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            filter: drop-shadow(0 0px 3px white);
+        }
+        
+
+        @keyframes arrowdown {
+  0%   {transform: translateY(-10%);}
+  50%  {transform: translateY(0);}
+  100% {transform: translateY(-10%);}
+}
+
+        .decostar{
+
+            width: 80px;
+            height: 80px;
+            background: url(images/decostar.svg) no-repeat center/contain;
+            position: absolute;
+            transition: .3s;
+            z-index: 1;
+        }
+
+        .leftstar{
+            top: 16%;
+  left: calc(0% - 39px);
+        }
+
+        .rightstar{
+            bottom: 12%;
+  left: calc(100% - 41px);
+        }
+
+        .tab-content div{
+            background-color: rgb(255, 192, 203,.5);
+            width: 100%;
+            height: 100%;
+        }
+        .tab-content1{
+            grid-template-columns: repeat(36, 1fr);
+             grid-template-rows: repeat(18, 1fr);
+        }
+        .messagebtn{
+            display: none;
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    border-radius: 4px;
+  z-index: 1;
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,.2));
+  border: none;
+  top: 20px;
+  right: 10px;
+  background: url(images/open.svg) no-repeat center/60%;
+            background-color: black;
+            z-index: 100;
+        }
+
+        .messagebtn.close{
+            background: url(images/close.svg) no-repeat center/60%;
+            background-color: black;
+
+        }
+
+
+        .tab-content1 .box1{
+            grid-column-start: 1;
+            grid-column-end: 20;
+            grid-row-start: 1;
+            grid-row-end: 19;
+            clip-path: ellipse(100% 100% at 0% 50%);
+        }
+
+        .tab-content1 .box2{
+            grid-column-start: 19;
+            grid-column-end: 36;
+            grid-row-start: 2;
+            grid-row-end: 6;
+            background: url(images/logo.png) no-repeat center/contain;
+            z-index: 1;
+        }
+
+        .tab-content1 .box3{
+            grid-column-start: 19;
+            grid-column-end: 36;
+            grid-row-start: 6;
+            grid-row-end: 8;
+            background: url(images/text1.svg) no-repeat center/contain;
+            z-index: 1;
+        }
+        .tab-content1 .box4{
+            grid-column-start: 19;
+            grid-column-end: 36;
+            grid-row-start: 8;
+            grid-row-end: 10;
+            background: url(images/text2.svg) no-repeat center/contain;
+            z-index: 1;
+        }
+        .tab-content1 .box5{
+            grid-column-start: 18;
+            grid-column-end: 36;
+            grid-row-start: 10;
+            grid-row-end: 18;
+            z-index: 1;
+            mask: linear-gradient(0deg, #000 90%,transparent 95%);
+            background:transparent;
+        }
+        .tab-content1 .box6{
+            grid-column-start: 18;
+            grid-column-end: 36;
+            grid-row-start: 10;
+            grid-row-end: 17;
+            font-family: "amandine", sans-serif;
+font-weight: 500;
+font-style: italic;
+font-size: 40px;
+  color: rgb(174, 219, 163);
+  background: transparent;
+  line-height: 45px;
+  text-align: right;
+  padding-top: 10%;
+  padding-right: 15px;
+        }
+
+
+        .message{
+            border: none;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+        }
+
+
+        @media screen and (min-width: 1200px) {
+            .tabs {
+                max-width: 1140px;
+                max-height: 897px;
+        }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            .tabs {
+                max-width: 960px;
+      
+        }
+
+    }
+
+        @media screen and (max-width: 767px)  {
+            .tabs {
+                max-width: 720px;
+        
+        }
+
+    }
+        @media screen and (max-width: 576px)  {
+            .tabs {
+                max-width: 540px;
+                     top: 0; 
+     transform: translateY(0);
+                
+        }
+        .bg{
+            background: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f0cea5 0, #f0cea5 14px);
+            z-index: -2;
+        }
+
+        .bg div:not(.main-visual-m,.bgcard.cardlace-m){
+            display: none;
+        }
+
+
+        .main-visual-m{
+            display: block;
+        }
+        .bgcard.cardlace-m{
+            border-image: url(images/lacecard-line.png) 25 fill / 0px 0 25px 0 round;
+    transform: rotate(0deg);
+    display: block;
+    top: 0;
+    margin-top: 0;
+    z-index: -1;
+    height: 85%;
+    transition-property: height;
+    transition: .3s;
+}
+
+.main-visual-m.close{
+    clip-path: ellipse(100% 100% at 50% 50%) !important;
+
+}
+
+        .frame{
+            padding: 0px 10px 40px 10px;
+        border-width: 6px 10px 10px 10px;
+        }
+
+        .tab-contents {
+
+    border-radius: 0;
+    border-width: 2px 0 0 0;
+}
+
+.tab-buttons button{
+    background: url(images/onestar.svg) no-repeat center/contain !important;
+}
+
+.tab-buttons button.active:nth-of-type(1){
+            background: url(images/tab1.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(2){
+            background: url(images/tab2.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(3){
+            background: url(images/tab3.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(4){
+            background: url(images/tab4.svg) no-repeat center/contain !important;
+        }
+        .tab-buttons button.active:nth-of-type(5){
+            background: url(images/tab5.svg) no-repeat center/contain !important;
+        }
+
+        .star {
+            background: url(images/onestar.svg) no-repeat center/contain;
+            }
+
+        .tab-content1{
+            grid-template-columns: repeat(20, 1fr);
+             grid-template-rows: repeat(14, 1fr);
+        }
+
+        .messagebtn{
+            display:block;
+            animation-name: messagebtn;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            cursor: pointer;
+        }
+        
+
+        @keyframes messagebtn{
+  0%   {transform: scale(1);}
+  50%   {transform: scale(.85);}
+  100% {transform: scale(1);}
+}
+
+
+        .tab-content1 .box1{
+            grid-column-start: 2;
+            grid-column-end: 20;
+            grid-row-start: 1;
+            grid-row-end: 9;
+            clip-path: ellipse(100% 100% at 50% 0%);
+            opacity:1;
+            transition: .3s;
+        }
+
+        .tab-content1 .box1.close{
+            opacity:0;
+            display: none;
+        }
+
+        .tab-content1 .box2{
+            grid-column-start: 2;
+            grid-column-end: 20;
+            grid-row-start: 7;
+            grid-row-end: 10;
+            opacity:1;
+            transition: .3s;
+            
+        }
+
+        .tab-content1 .box2.close{
+            opacity:0;
+            display: none;
+        }
+
+        .tab-content1 .box3{
+            grid-column-start: 2;
+            grid-column-end: 20;
+            grid-row-start: 10;
+            grid-row-end: 12;
+            opacity:1;
+            transition: .3s;
+
+        }
+
+        .tab-content1 .box3.close{
+            opacity:0;
+            display: none;
+        }
+
+        .tab-content1 .box4{
+            grid-column-start: 2;
+            grid-column-end: 20;
+            grid-row-start: 12;
+            grid-row-end: 14;
+            opacity:1;
+            transition: .3s;
+        }
+
+        .tab-content1 .box4.close{
+            opacity:0;
+            display: none;
+        }
+
+        .tab-content1 .box5{
+            grid-column-start: 2;
+    grid-column-end: 20;
+    grid-row-start: 1;
+    grid-row-end: 14;
+            display: none;
+            opacity:0;
+            mask: linear-gradient(0deg, #000 30%,transparent 100%);
+            transition: .6s;
+            pointer-events: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab-content1 .box5.close{
+            opacity:1;
+            z-index: 99;
+            display: block;
+        }
+        .tab-content1 .box6{
+            grid-column-start: 2;
+    grid-column-end: 20;
+    grid-row-start: 7;
+    grid-row-end: 14;
+            display: none;
+            opacity:0;
+            transition: .6s;
+            color:white;
+        }
+        .tab-content1 .box6.close{
+            opacity:1;
+            display: block;
+        }
+
+
+    }
+
+
+        @media screen and (max-device-width: 480px) {
+
+        .tabs {
+            height: calc(100% - 60px);
+        }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="bg">
+        <div class="bg-L"></div>
+        <div class="bg-M"></div>
+        <div class="bg-R"></div>
+        <div class="ribbon"></div>
+        <div class="bgcard cardgreen"></div>
+        <div class="bgcard cardlace"></div>
+        <div class="bgcard cardlace-m"></div>
+        <div class="main-visual"></div>
+        <div class="main-visual-m"></div>
+    </div>
+    <div class="frame">
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="active" onclick="showTab(0)">首頁</button>
+                <button onclick="showTab(1)">活動概要</button>
+                <button onclick="showTab(2)">咖啡廳應援</button>
+                <button onclick="showTab(3)">信徒創作募集</button>
+                <button onclick="showTab(4)">企劃團隊</button>
+            </div>
+            <div class="starbar">
+                <div class="spaceleft"></div>
+                <div class="star"></div>
+                <div class="spaceright"></div>
+            </div>
+            <div class="tab-contents">
+                <div class="tab-content tab-content1 active">
+                    <button class="messagebtn"></button>
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                    <div class="box3"></div>
+                    <div class="box4"></div>
+                    <div class="box5">
+                        <object class="message" data="https://addddddo.site/guestbook8/index.html" width="100%" height="100%"></object>
+                    </div>
+                    <div class="box6">Leave a<br/> Birthday Wish<br/> for<br/> Olivine.</div>
+
+
+                </div>
+                <div class="tab-content tab-content2">Tab 2 Content</div>
+                <div class="tab-content tab-content3">Tab 3 Content</div>
+                <div class="tab-content tab-content4">Tab 4 Content</div>
+                <div class="tab-content tab-content5">Tab 5 Content</div>
+            </div>
+            <div class="nextpage"></div>
+            <div class="decostar leftstar"></div>
+            <div class="decostar rightstar"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentTab = 0;
+
+function showTab(index) {
+    const buttonSwitch = document.querySelector('.tab-buttons');
+    const buttons = document.querySelectorAll('.tab-buttons button');
+    const contents = document.querySelectorAll('.tab-content');
+    const starBar = document.querySelector('.starbar');
+    const cardgreen = document.querySelector('.cardgreen');
+    const cardlace = document.querySelector('.cardlace');
+    const cardlaceM = document.querySelector('.cardlace-m');
+    const ribbon = document.querySelector('.ribbon');
+    const nextpage = document.querySelector('.nextpage');
+    const leftstar = document.querySelector('.leftstar');
+    const rightstar = document.querySelector('.rightstar');
+    const mainVisual = document.querySelector('.main-visual');
+    const mainVisualM = document.querySelector('.main-visual-m');
+    const messagebtn = document.querySelector('.messagebtn');
+    const tabContent1Box1 = document.querySelector('.tab-content1 .box1');
+    const tabContent1Box2 = document.querySelector('.tab-content1 .box2');
+    const tabContent1Box3 = document.querySelector('.tab-content1 .box3');
+    const tabContent1Box4 = document.querySelector('.tab-content1 .box4');
+    const tabContent1Box5 = document.querySelector('.tab-content1 .box5');
+    const tabContent1Box6 = document.querySelector('.tab-content1 .box6');
+    
+
+    buttons.forEach((button, i) => {
+        button.classList.remove('active');
+        // button.style.gridColumn = `span 1`;
+        if (i === index) {
+            button.classList.add('active');
+            // button.style.gridColumn = `span 2`;
+        }
+    });
+
+    contents.forEach(content => {
+        content.classList.remove('active');
+        content.style.top = "100%";
+        content.style.opacity = "0";
+    });
+
+    contents[index].classList.add('active');
+    contents[index].style.top = "0";
+    contents[index].style.opacity = "1";
+
+    // 更改starbar的位置
+    switch (index) {
+        case 0:
+            starBar.style.gridTemplateColumns = '0fr 2fr 4fr';
+            buttonSwitch.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
+            cardgreen.style.transform = 'rotate(2deg)';
+            cardlace.style.transform = 'rotate(-2deg)';
+            ribbon.style.transform = 'rotate(5deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
+            leftstar.style.top = '16%';
+            rightstar.style.bottom = '12%';
+            mainVisual.style.clipPath = 'ellipse(100% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 54% at 50% 0%)';
+            cardlaceM.style.height = '85%';
+            break;
+        case 1:
+            starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 2fr 1fr 1fr 1fr';
+            cardgreen.style.transform = 'rotate(-3deg)';
+            cardlace.style.transform = 'rotate(3deg)';
+            ribbon.style.transform = 'rotate(-3deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
+            leftstar.style.top = '32%';
+            rightstar.style.bottom = '28%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
+            break;
+        case 2:
+            starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 1fr 2fr 1fr 1fr';
+            cardgreen.style.transform = 'rotate(3deg)';
+            cardlace.style.transform = 'rotate(-1deg)';
+            ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
+            leftstar.style.top = '48%';
+            rightstar.style.bottom = '44%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
+            break;
+        case 3:
+            starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 2fr 1fr';
+            cardgreen.style.transform = 'rotate(-2deg)';
+            cardlace.style.transform = 'rotate(2deg)';
+            ribbon.style.transform = 'rotate(-2deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
+            leftstar.style.top = '64%';
+            rightstar.style.bottom = '60%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
+            break;
+        case 4:
+            starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
+            buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 2fr';
+            cardgreen.style.transform = 'rotate(1deg)';
+            cardlace.style.transform = 'rotate(-1deg)';
+            ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
+            nextpage.style.background = 'url(images/top.svg) no-repeat center/contain';
+            leftstar.style.top = '80%';
+            rightstar.style.bottom = '76%';
+            mainVisual.style.clipPath = 'ellipse(0% 100% at 0% 50%)';
+            mainVisualM.style.clipPath = 'ellipse(100% 0% at 50% 0%)';
+            cardlaceM.style.height = '100%';
+            messagebtn.classList.remove("close");
+            mainVisualM.classList.remove("close");
+            tabContent1Box1.classList.remove("close");
+            tabContent1Box2.classList.remove("close");
+            tabContent1Box3.classList.remove("close");
+            tabContent1Box4.classList.remove("close");
+            tabContent1Box5.classList.remove("close");
+            tabContent1Box6.classList.remove("close");
+            break;
+    }
+
+    currentTab = index;
+}
+
+
+        function handleScroll(event) {
+            const delta = Math.sign(event.deltaY);
+            if (delta > 0) {
+                currentTab = (currentTab + 1) % 5;
+            } else {
+                currentTab = (currentTab - 1 + 5) % 5;
+            }
+            showTab(currentTab);
+        }
+
+        window.addEventListener('wheel', handleScroll);
+
+        let touchStartY = 0;
+
+        function handleTouchStart(event) {
+            touchStartY = event.touches[0].clientY;
+        }
+
+        function handleTouchEnd(event) {
+            const touchEndY = event.changedTouches[0].clientY;
+            const delta = touchStartY - touchEndY;
+            if (Math.abs(delta) > 50) { // Min delta to consider as a swipe
+                if (delta > 0) {
+                    currentTab = (currentTab + 1) % 5;
+                } else {
+                    currentTab = (currentTab - 1 + 5) % 5;
+                }
+                showTab(currentTab);
+            }
+        }
+
+        window.addEventListener('touchstart', handleTouchStart);
+        window.addEventListener('touchend', handleTouchEnd);
+        document.querySelector('iframe').addEventListener('touchstart',function(){
+            this.focus();
+        });
+
+
+        window.addEventListener("resize", () => {
+        const widthAbove1000 = window.innerWidth > 576;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let noRun = urlParams.get('noRun');
+
+        if (widthAbove1000 && noRun)
+          window.location.href = window.location.href.split("?")[0];
+
+        if (widthAbove1000 || noRun) return;
+
+        window.location.href = window.location.href + "?noRun=true";
+      });
+    </script>
+</body>
+</html>
