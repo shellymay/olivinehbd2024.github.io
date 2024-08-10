@@ -24,8 +24,7 @@
       <script>
 $(document).ready(function(){
 $(".messagebtn").click(function(){
- // $(".tab-content1 .box5,.tab-content1 .box6").toggle();
-  $( ".messagebtn,.main-visual-m,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
+  $( ".messagebtn,.main-visual-m,#main-visual-m-img,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
   
 });
 });
@@ -71,6 +70,7 @@ $(".messagebtn").click(function(){
   background:url(images/text1.svg) no-repeat;
   background:url(images/text2.svg) no-repeat;
   background:url(images/top.svg) no-repeat;
+  background:url(images/mainvisual.jpg) no-repeat;
 
   margin-left:-10000px;
 }
@@ -126,7 +126,6 @@ $(".messagebtn").click(function(){
             top: calc( 50vh - 400px);
             right:calc( 50vw - 675px );
             margin-top: 20px;
-            // filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
             transition: .3s;
             transition-property: transform;
         }
@@ -152,18 +151,19 @@ $(".messagebtn").click(function(){
     width: 630px;
     height: 91%;
     max-height: 853px;
-    background-color: greenyellow;
+    background-color: #93a770;
     clip-path: ellipse(100% 100% at 0% 50%);
     top: 50%;
     position: absolute;
     left: 50%;
     transform: translateX(-93%) translateY(-46%);
-    border-radius: 40px 0 0 40px;
     transition: 1s;
+    mask: linear-gradient(0deg,transparent 0%,#000 10%,#000 90%, transparent 100%);
     animation-name: main-visual-in;
             animation-duration: .7s;
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
+            overflow: hidden;
         }
         
 
@@ -176,7 +176,7 @@ $(".messagebtn").click(function(){
             display: none;
     width: 100vw;
     height: 100vh;
-    background-color: greenyellow;
+    background-color: #93a770;
     clip-path: ellipse(100% 54% at 50% 0%);
     transition: .3s;
     transition-property: clip-path;
@@ -185,7 +185,10 @@ $(".messagebtn").click(function(){
             animation-duration: 1s;
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
+            overflow: hidden;
         }
+
+
         
 
         @keyframes main-visualm-in {
@@ -193,6 +196,35 @@ $(".messagebtn").click(function(){
   100% {clip-path: ellipse(100% 54% at 50% 0%);}
 }
 
+        #main-visual-img, #main-visual-m-img{
+            width: 114%;
+            height: 114%;
+            background: url(images/mainvisual.jpg) no-repeat center/cover;
+            animation: shake3d 60s infinite;
+  animation-timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  left: -7%;
+  position: relative;
+  top: -7%;
+  transform-origin:right;
+
+        }
+        #main-visual-m-img.close{
+            mask: linear-gradient(0deg,transparent 10%, #000 70%);
+        }
+
+        @keyframes shake3d {
+            0% { transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1); }
+            10% { transform: translate3d(-5px, -5px, -10px) rotate3d(1, 0, 0, -2deg) scale(1.02); }
+            20% { transform: translate3d(5px, 0, 10px) rotate3d(0, 1, 0, 2deg) scale(0.98); }
+            30% { transform: translate3d(-5px, 5px, -5px) rotate3d(0, 0, 1, 2deg) scale(1.01); }
+            40% { transform: translate3d(5px, -5px, 5px) rotate3d(1, 0, 0, -2deg) scale(0.99); }
+            50% { transform: translate3d(-5px, 0, -10px) rotate3d(0, 1, 0, 2deg) scale(1.02); }
+            60% { transform: translate3d(5px, 5px, 10px) rotate3d(0, 0, 1, -2deg) scale(0.98); }
+            70% { transform: translate3d(-5px, -5px, 5px) rotate3d(1, 0, 0, 2deg) scale(1.01); }
+            80% { transform: translate3d(5px, 0, -5px) rotate3d(0, 1, 0, -2deg) scale(0.99); }
+            90% { transform: translate3d(-5px, 5px, 10px) rotate3d(0, 0, 1, 2deg) scale(1.02); }
+            100% { transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1); }
+        }
 
         .tabs {
             display: flex;
@@ -332,7 +364,7 @@ $(".messagebtn").click(function(){
         }
 
         .tab-content div{
-            background-color: rgb(255, 192, 203,.5);
+            // background-color: rgb(255, 192, 203,.5);
             width: 100%;
             height: 100%;
         }
@@ -467,7 +499,7 @@ font-size: 40px;
             z-index: -2;
         }
 
-        .bg div:not(.main-visual-m,.bgcard.cardlace-m){
+        .bg div:not(.main-visual-m,.bgcard.cardlace-m,#main-visual-m-img){
             display: none;
         }
 
@@ -679,8 +711,8 @@ font-size: 40px;
         <div class="bgcard cardgreen"></div>
         <div class="bgcard cardlace"></div>
         <div class="bgcard cardlace-m"></div>
-        <div class="main-visual"></div>
-        <div class="main-visual-m"></div>
+        <div class="main-visual"><div id="main-visual-img"></div></div>
+        <div class="main-visual-m"><div id="main-visual-m-img"></div></div>
     </div>
     <div class="frame">
 
@@ -705,7 +737,7 @@ font-size: 40px;
                     <div class="box3"></div>
                     <div class="box4"></div>
                     <div class="box5">
-                        <object class="message" data="https://addddddo.site/guestbook8/index.html" width="100%" height="100%"></object>
+                        <object class="message" id="messagebox" data="" type="text/html" width="100%" height="100%"></object>
                     </div>
                     <div class="box6">Leave a<br/> Birthday Wish<br/> for<br/> Olivine.</div>
 
@@ -746,6 +778,8 @@ function showTab(index) {
     const tabContent1Box4 = document.querySelector('.tab-content1 .box4');
     const tabContent1Box5 = document.querySelector('.tab-content1 .box5');
     const tabContent1Box6 = document.querySelector('.tab-content1 .box6');
+    const mainVisualMImg = document.getElementById("main-visual-m-img");
+    
     
 
     buttons.forEach((button, i) => {
@@ -802,6 +836,7 @@ function showTab(index) {
             tabContent1Box4.classList.remove("close");
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
+            mainVisualMImg.classList.remove("close");
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -823,6 +858,7 @@ function showTab(index) {
             tabContent1Box4.classList.remove("close");
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
+            mainVisualMImg.classList.remove("close");
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -844,6 +880,7 @@ function showTab(index) {
             tabContent1Box4.classList.remove("close");
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
+            mainVisualMImg.classList.remove("close");
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -865,6 +902,7 @@ function showTab(index) {
             tabContent1Box4.classList.remove("close");
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
+            mainVisualMImg.classList.remove("close");
             break;
     }
 
@@ -905,9 +943,9 @@ function showTab(index) {
 
         window.addEventListener('touchstart', handleTouchStart);
         window.addEventListener('touchend', handleTouchEnd);
-        document.querySelector('iframe').addEventListener('touchstart',function(){
-            this.focus();
-        });
+        //document.querySelector('iframe').addEventListener('touchstart',function(){
+        //    this.focus();
+        //});
 
 
         window.addEventListener("resize", () => {
@@ -923,6 +961,31 @@ function showTab(index) {
 
         window.location.href = window.location.href + "?noRun=true";
       });
+
+
+      
+   
+      function updateObjectData() {
+        const myObject = document.getElementById("messagebox");
+            if (window.innerWidth < 577) {
+                myObject.setAttribute("data", "https://addddddo.site/guestbook8/index-m.html");
+            } else {
+                myObject.setAttribute("data", "https://addddddo.site/guestbook8/index.html");
+            }
+            reloadObject(myObject);
+        }
+
+        function reloadObject(obj) {
+            // Create a clone of the object to force a reload
+            const clone = obj.cloneNode(true);
+            obj.parentNode.replaceChild(clone, obj);
+        }
+
+        // Initial check
+        updateObjectData();
+
+        // Update when window is resized
+        window.addEventListener("resize", updateObjectData);
     </script>
 </body>
 </html>
