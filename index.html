@@ -24,7 +24,7 @@
       <script>
 $(document).ready(function(){
 $(".messagebtn").click(function(){
-  $( ".messagebtn,.main-visual-m,#main-visual-m-img,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
+  $( ".messagebtn,.main-visual-m,#main-visual-m-img,.nextpage,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
   
 });
 });
@@ -206,10 +206,15 @@ $(".messagebtn").click(function(){
   position: relative;
   top: -7%;
   transform-origin:right;
+  transition: .3s;
 
+        }
+        #main-visual-m-img{
+            top: -10%;
         }
         #main-visual-m-img.close{
             mask: linear-gradient(0deg,transparent 10%, #000 70%);
+            top: -7%;
         }
 
         @keyframes shake3d {
@@ -334,6 +339,10 @@ $(".messagebtn").click(function(){
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
             filter: drop-shadow(0 0px 3px white);
+        }
+
+        .nextpage.close{
+            display: none;
         }
         
 
@@ -657,7 +666,7 @@ font-size: 40px;
             grid-column-start: 2;
     grid-column-end: 20;
     grid-row-start: 1;
-    grid-row-end: 14;
+    grid-row-end: 15;
             display: none;
             opacity:0;
             mask: linear-gradient(0deg, #000 30%,transparent 100%);
@@ -675,8 +684,8 @@ font-size: 40px;
         .tab-content1 .box6{
             grid-column-start: 2;
     grid-column-end: 20;
-    grid-row-start: 7;
-    grid-row-end: 14;
+    grid-row-start: 8;
+    grid-row-end: 15;
             display: none;
             opacity:0;
             transition: .6s;
@@ -779,6 +788,7 @@ function showTab(index) {
     const tabContent1Box5 = document.querySelector('.tab-content1 .box5');
     const tabContent1Box6 = document.querySelector('.tab-content1 .box6');
     const mainVisualMImg = document.getElementById("main-visual-m-img");
+
     
     
 
@@ -837,6 +847,7 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            nextpage.classList.remove("close");
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -859,6 +870,7 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            nextpage.classList.remove("close");
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -881,6 +893,7 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            nextpage.classList.remove("close");
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -903,6 +916,7 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            nextpage.classList.remove("close");
             break;
     }
 
