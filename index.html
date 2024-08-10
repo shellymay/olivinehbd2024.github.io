@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>翠色聖禱祭 ∥ 非官方奧利文生日慶祝應援企劃2024</title>
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
@@ -50,6 +52,28 @@ $(".messagebtn").click(function(){
             overflow: hidden;
         }
 
+        div.loader{
+  background:url(images/close.svg) no-repeat;
+  background:url(images/decostar.svg) no-repeat;
+  background:url(images/gift.svg) no-repeat;
+  background:url(images/greencard-line.png) no-repeat;
+  background:url(images/lacecard-line.png) no-repeat;
+  background:url(images/logo.png) no-repeat;
+  background:url(images/more.svg) no-repeat;
+  background:url(images/onestar.svg) no-repeat;
+  background:url(images/open.svg) no-repeat;
+  background:url(images/star.svg) no-repeat;
+  background:url(images/tab1.svg) no-repeat;
+  background:url(images/tab2.svg) no-repeat;
+  background:url(images/tab3.svg) no-repeat;
+  background:url(images/tab4.svg) no-repeat;
+  background:url(images/tab5.svg) no-repeat;
+  background:url(images/text1.svg) no-repeat;
+  background:url(images/text2.svg) no-repeat;
+  background:url(images/top.svg) no-repeat;
+
+  margin-left:-10000px;
+}
 
 
         .frame {
@@ -267,12 +291,12 @@ $(".messagebtn").click(function(){
 
         
         .nextpage{
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: url(images/more.svg) no-repeat center/contain;
             position: absolute;
-            right: calc(50% - 20px);
-            top: calc(100% - 30px);
+            right: calc(50% - 24px);
+            top: calc(100% - 36px);
             animation-name: arrowdown;
             animation-duration: 2s;
             animation-iteration-count: infinite;
@@ -344,7 +368,6 @@ $(".messagebtn").click(function(){
             grid-column-end: 20;
             grid-row-start: 1;
             grid-row-end: 19;
-            clip-path: ellipse(100% 100% at 0% 50%);
         }
 
         .tab-content1 .box2{
@@ -403,8 +426,11 @@ font-size: 40px;
             border: none;
   overflow: hidden;
   height: 100%;
-  height: 100%;
+  width: 100%;
         }
+
+
+
 
 
         @media screen and (min-width: 1200px) {
@@ -471,6 +497,20 @@ font-size: 40px;
         border-width: 6px 10px 10px 10px;
         }
 
+        .decostar{
+            width: 60px;
+            height: 60px;
+
+        }
+
+        .leftstar {
+  left: calc(0% - 30px);
+        }
+
+        .rightstar {
+  left: calc(100% - 30px);
+}
+
         .tab-contents {
 
     border-radius: 0;
@@ -528,7 +568,6 @@ font-size: 40px;
             grid-column-end: 20;
             grid-row-start: 1;
             grid-row-end: 9;
-            clip-path: ellipse(100% 100% at 50% 0%);
             opacity:1;
             transition: .3s;
         }
@@ -589,7 +628,7 @@ font-size: 40px;
     grid-row-end: 14;
             display: none;
             opacity:0;
-            mask: linear-gradient(0deg, #000 30%,transparent 80%);
+            mask: linear-gradient(0deg, #000 30%,transparent 100%);
             transition: .6s;
             pointer-events: auto;
             -webkit-overflow-scrolling: touch;
@@ -600,6 +639,7 @@ font-size: 40px;
             z-index: 99;
             display: block;
         }
+
         .tab-content1 .box6{
             grid-column-start: 2;
     grid-column-end: 20;
@@ -630,6 +670,7 @@ font-size: 40px;
     </style>
 </head>
 <body>
+    <div class="loader"></div>
     <div class="bg">
         <div class="bg-L"></div>
         <div class="bg-M"></div>
@@ -664,7 +705,7 @@ font-size: 40px;
                     <div class="box3"></div>
                     <div class="box4"></div>
                     <div class="box5">
-                        <iframe class="message" src="https://addddddo.site/guestbook8/index.html" width="100%" scrolling="yes"></iframe>
+                        <object class="message" data="https://addddddo.site/guestbook8/index.html" width="100%" height="100%"></object>
                     </div>
                     <div class="box6">Leave a<br/> Birthday Wish<br/> for<br/> Olivine.</div>
 
@@ -870,15 +911,15 @@ function showTab(index) {
 
 
         window.addEventListener("resize", () => {
-        const widthAbove1000 = window.innerWidth > 576;
+        const widthAbove576 = window.innerWidth > 576;
 
         const urlParams = new URLSearchParams(window.location.search);
         let noRun = urlParams.get('noRun');
 
-        if (widthAbove1000 && noRun)
+        if (widthAbove576 && noRun)
           window.location.href = window.location.href.split("?")[0];
 
-        if (widthAbove1000 || noRun) return;
+        if (widthAbove576 || noRun) return;
 
         window.location.href = window.location.href + "?noRun=true";
       });
