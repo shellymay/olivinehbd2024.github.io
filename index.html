@@ -201,11 +201,11 @@ $(".messagebtn").click(function(){
             height: 114%;
             background: url(images/mainvisual.jpg) no-repeat center/cover;
             animation: shake3d 60s infinite;
-  animation-timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  animation-timing-function: ease-in-out;
   left: -7%;
   position: relative;
   top: -7%;
-  transform-origin:right;
+  transform-origin:top right;
   transition: .3s;
 
         }
@@ -218,17 +218,39 @@ $(".messagebtn").click(function(){
         }
 
         @keyframes shake3d {
-            0% { transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1); }
-            10% { transform: translate3d(-5px, -5px, -10px) rotate3d(1, 0, 0, -2deg) scale(1.02); }
-            20% { transform: translate3d(5px, 0, 10px) rotate3d(0, 1, 0, 2deg) scale(0.98); }
-            30% { transform: translate3d(-5px, 5px, -5px) rotate3d(0, 0, 1, 2deg) scale(1.01); }
-            40% { transform: translate3d(5px, -5px, 5px) rotate3d(1, 0, 0, -2deg) scale(0.99); }
-            50% { transform: translate3d(-5px, 0, -10px) rotate3d(0, 1, 0, 2deg) scale(1.02); }
-            60% { transform: translate3d(5px, 5px, 10px) rotate3d(0, 0, 1, -2deg) scale(0.98); }
-            70% { transform: translate3d(-5px, -5px, 5px) rotate3d(1, 0, 0, 2deg) scale(1.01); }
-            80% { transform: translate3d(5px, 0, -5px) rotate3d(0, 1, 0, -2deg) scale(0.99); }
-            90% { transform: translate3d(-5px, 5px, 10px) rotate3d(0, 0, 1, 2deg) scale(1.02); }
-            100% { transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1); }
+            0% { 
+                transform: translate3d(0px, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1) skew(0deg, 0deg); 
+            }
+            10% { 
+                transform: translate3d(0px, -5px, -10px) rotate3d(1, 0, 0, -2deg) scale(1.02) skew(-0.5deg, -0.5deg); 
+            }
+            20% { 
+                transform: translate3d(0px, 0, 10px) rotate3d(0, 1, 0, 2deg) scale(0.98) skew(0deg, 0deg); 
+            }
+            30% { 
+                transform: translate3d(0px, 5px, -5px) rotate3d(0, 0, 1, 2deg) scale(1.01) skew(-0.5deg, -0.5deg); 
+            }
+            40% { 
+                transform: translate3d(0px, -5px, 5px) rotate3d(1, 0, 0, -2deg) scale(0.99) skew(0deg, 0deg); 
+            }
+            50% { 
+                transform: translate3d(0px, 0, -10px) rotate3d(0, 1, 0, 2deg) scale(1.02) skew(-0.5deg, -0.5deg); 
+            }
+            60% { 
+                transform: translate3d(0px, 5px, 10px) rotate3d(0, 0, 1, -2deg) scale(0.98) skew(0deg, 0deg); 
+            }
+            70% { 
+                transform: translate3d(0px, -5px, 5px) rotate3d(1, 0, 0, 2deg) scale(1.01) skew(-0.5deg, -0.5deg); 
+            }
+            80% { 
+                transform: translate3d(0px, 0, -5px) rotate3d(0, 1, 0, -2deg) scale(0.99) skew(0deg, 0deg); 
+            }
+            90% { 
+                transform: translate3d(0px, 5px, 10px) rotate3d(0, 0, 1, 2deg) scale(1.02) skew(-0.5deg, -0.5deg); 
+            }
+            100% { 
+                transform: translate3d(0px, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1) skew(0deg, 0deg); 
+            }
         }
 
         .tabs {
