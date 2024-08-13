@@ -164,6 +164,7 @@ $(".messagebtn").click(function(){
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
             overflow: hidden;
+            background: url(images/bg.webp) no-repeat center/cover;
         }
         
 
@@ -186,6 +187,8 @@ $(".messagebtn").click(function(){
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
             overflow: hidden;
+            background: url(images/bg.webp) no-repeat center/cover;
+    
         }
 
 
@@ -199,24 +202,24 @@ $(".messagebtn").click(function(){
         #main-visual-img, #main-visual-m-img{
             width: 114%;
             height: 114%;
-            background: url(images/mainvisual.jpg) no-repeat center/cover;
+            background: url(images/olivine.webp) no-repeat center/cover;
             animation-name:  shake3d,shakeinblur;
             animation-duration: 30s,1.5s;
             animation-iteration-count: infinite,1;
   animation-timing-function: ease-in-out, cubic-bezier(0.36, 0.07, 0.19, 0.97);
   left: -7%;
   position: relative;
-  top: -7%;
+// top: -3%;
   transform-origin:center;
   transition: .3s;
 
         }
         #main-visual-m-img{
-            top: -10%;
+            top: -5%;
         }
         #main-visual-m-img.close{
             mask: linear-gradient(0deg,transparent 10%, #000 70%);
-            top: -7%;
+            top: -3%;
         }
         @keyframes shakeinblur {
             0%{
