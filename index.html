@@ -96,7 +96,7 @@ $(".messagebtn").click(function(){
         .bg-L,.bg-R{
             overflow: hidden;
             position: relative;
-            background: repeating-linear-gradient(-45deg,transparent,transparent 12px,#f0cea5 0,#f0cea5 14px);
+            background: repeating-linear-gradient(-45deg,transparent,transparent 12px,#f6f2e0 0,#f6f2e0 14px);
             
         }
 
@@ -111,9 +111,9 @@ $(".messagebtn").click(function(){
             width: 100vw;
             height: 52vh; 
             position: absolute;
-            background: #f0cea5;
+            background: #f6f2e0;
             top: calc( 50vh - 26vh);
-            transform: rotate(5deg) scale(2, 1);
+            transform: rotate(3deg) scale(2, 1);
             transition: .3s;
             transition-property: transform;
         }
@@ -146,6 +146,7 @@ $(".messagebtn").click(function(){
 
         }
 
+
         .main-visual{
             display: block;
     width: 630px;
@@ -164,7 +165,6 @@ $(".messagebtn").click(function(){
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
             overflow: hidden;
-            background: url(images/bg.webp) no-repeat center/cover;
         }
         
 
@@ -187,7 +187,6 @@ $(".messagebtn").click(function(){
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
             overflow: hidden;
-            background: url(images/bg.webp) no-repeat center/cover;
     
         }
 
@@ -197,8 +196,27 @@ $(".messagebtn").click(function(){
         @keyframes main-visualm-in {
   0%   {clip-path: ellipse(100% 0 at 50% 0%);}
   100% {clip-path: ellipse(100% 54% at 50% 0%);}
+  
 }
 
+.main-visual div,.main-visual-m div{
+position:absolute;
+
+}
+
+#main-visual-bg-img, #main-visual-m-bg-img{
+    width: 114%;
+            height: 114%;
+            background: url(images/bg.webp) no-repeat center/cover;
+            animation-name:  shake3d,shakeinblur;
+            animation-duration: 30s,1.5s;
+            animation-iteration-count: infinite,1;
+  animation-timing-function: ease-in-out, cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  left: -7%;
+
+  transform-origin:center;
+  transition: .3s;
+}
         #main-visual-img, #main-visual-m-img{
             width: 114%;
             height: 114%;
@@ -208,13 +226,14 @@ $(".messagebtn").click(function(){
             animation-iteration-count: infinite,1;
   animation-timing-function: ease-in-out, cubic-bezier(0.36, 0.07, 0.19, 0.97);
   left: -7%;
-  position: relative;
-// top: -3%;
+
+
   transform-origin:center;
   transition: .3s;
 
         }
-        #main-visual-m-img{
+
+        #main-visual-m-bg-img, #main-visual-m-img{
             top: -5%;
         }
         #main-visual-m-img.close{
@@ -419,7 +438,6 @@ $(".messagebtn").click(function(){
         }
 
         .tab-content div{
-            // background-color: rgb(255, 192, 203,.5);
             width: 100%;
             height: 100%;
         }
@@ -550,7 +568,7 @@ font-size: 40px;
                 
         }
         .bg{
-            background: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f0cea5 0, #f0cea5 14px);
+            background: repeating-linear-gradient(-45deg, transparent, transparent 12px, #f6f2e0 0, #f6f2e0 14px);
             z-index: -2;
         }
 
@@ -766,8 +784,8 @@ font-size: 40px;
         <div class="bgcard cardgreen"></div>
         <div class="bgcard cardlace"></div>
         <div class="bgcard cardlace-m"></div>
-        <div class="main-visual"><div id="main-visual-img"></div></div>
-        <div class="main-visual-m"><div id="main-visual-m-img"></div></div>
+        <div class="main-visual"><div id="main-visual-bg-img"></div><div id="main-visual-img"></div><div id="main-visual-bird1-img"></div><div id="main-visual-bird2-img"></div></div>
+        <div class="main-visual-m"><div id="main-visual-m-bg-img"></div><div id="main-visual-m-img"></div><div id="main-visual-m-bird1-img"></div><div id="main-visual-m-bird2-img"></div></div>
     </div>
     <div class="frame">
 
@@ -820,7 +838,6 @@ function showTab(index) {
     const cardgreen = document.querySelector('.cardgreen');
     const cardlace = document.querySelector('.cardlace');
     const cardlaceM = document.querySelector('.cardlace-m');
-    const ribbon = document.querySelector('.ribbon');
     const nextpage = document.querySelector('.nextpage');
     const leftstar = document.querySelector('.leftstar');
     const rightstar = document.querySelector('.rightstar');
@@ -864,7 +881,6 @@ function showTab(index) {
             buttonSwitch.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(2deg)';
             cardlace.style.transform = 'rotate(-2deg)';
-            ribbon.style.transform = 'rotate(5deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '16%';
             rightstar.style.bottom = '12%';
@@ -877,7 +893,6 @@ function showTab(index) {
             buttonSwitch.style.gridTemplateColumns = '1fr 2fr 1fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(-3deg)';
             cardlace.style.transform = 'rotate(3deg)';
-            ribbon.style.transform = 'rotate(-3deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '32%';
             rightstar.style.bottom = '28%';
@@ -900,7 +915,6 @@ function showTab(index) {
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 2fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(3deg)';
             cardlace.style.transform = 'rotate(-1deg)';
-            ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '48%';
             rightstar.style.bottom = '44%';
@@ -923,7 +937,6 @@ function showTab(index) {
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 2fr 1fr';
             cardgreen.style.transform = 'rotate(-2deg)';
             cardlace.style.transform = 'rotate(2deg)';
-            ribbon.style.transform = 'rotate(-2deg) scale(2, 1)';
             nextpage.style.background = 'url(images/more.svg) no-repeat center/contain';
             leftstar.style.top = '64%';
             rightstar.style.bottom = '60%';
@@ -946,7 +959,6 @@ function showTab(index) {
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 2fr';
             cardgreen.style.transform = 'rotate(1deg)';
             cardlace.style.transform = 'rotate(-1deg)';
-            ribbon.style.transform = 'rotate(3deg) scale(2, 1)';
             nextpage.style.background = 'url(images/top.svg) no-repeat center/contain';
             leftstar.style.top = '80%';
             rightstar.style.bottom = '76%';
