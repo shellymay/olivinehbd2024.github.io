@@ -24,7 +24,7 @@
       <script>
 $(document).ready(function(){
 $(".messagebtn").click(function(){
-  $( ".messagebtn,#main-visual-container,.main-visual-m,.main-visual-m div,.nextpage,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
+  $( ".messagebtn,#main-visual-container,.main-visual-m,#main-visual-m-img,#main-visual-m-bg-img,.nextpage,.tab-content1 .box1,.tab-content1 .box2,.tab-content1 .box3,.tab-content1 .box4,.tab-content1 .box5,.tab-content1 .box6" ).toggleClass( "close" );
   
 });
 });
@@ -259,6 +259,7 @@ position:absolute;
   opacity: 1;
 
 }
+
         @keyframes shakeinblur {
             0%{
                 transform: translate3d(0px, 0, 0) rotate3d(0, 0, 0, 0deg) scale(1.5) skew(0deg, 0deg); 
@@ -1041,12 +1042,11 @@ function showTab(index) {
     const tabContent1Box5 = document.querySelector('.tab-content1 .box5');
     const tabContent1Box6 = document.querySelector('.tab-content1 .box6');
     const mainVisualMImg = document.getElementById("main-visual-m-img");
+    const mainVisualMBGImg = document.getElementById("main-visual-m-bg-img");
     const bird1 = document.getElementById("main-visual-bird1-img");
     const bird2 = document.getElementById("main-visual-bird2-img");
     const mainVisualContainer = document.getElementById("main-visual-container");
     const mainVisualContainerM = document.querySelector('.mobileContainer');
-    
-
     
 
     buttons.forEach((button, i) => {
@@ -1081,8 +1081,6 @@ function showTab(index) {
             mainVisual.style.clipPath = 'ellipse(100% 100% at 0% 50%)';
             mainVisualContainerM.style.clipPath = 'ellipse(100% 54% at 50% 0%)';
             cardlaceM.style.height = '85%';
-            bird1.style.opacity = '1';
-            bird2.style.opacity = '1';
             break;
         case 1:
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
@@ -1104,10 +1102,9 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            mainVisualMBGImg.classList.remove("close");
             nextpage.classList.remove("close");
             mainVisualContainer.classList.remove("close");
-            bird1.style.opacity = '0';
-            bird2.style.opacity = '0';
             break;
         case 2:
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
@@ -1129,10 +1126,9 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            mainVisualMBGImg.classList.remove("close");
             nextpage.classList.remove("close");
             mainVisualContainer.classList.remove("close");
-            bird1.style.opacity = '0';
-            bird2.style.opacity = '0';
             break;
         case 3:
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
@@ -1154,10 +1150,9 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            mainVisualMBGImg.classList.remove("close");
             nextpage.classList.remove("close");
             mainVisualContainer.classList.remove("close");
-            bird1.style.opacity = '0';
-            bird2.style.opacity = '0';
             break;
         case 4:
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
@@ -1179,10 +1174,9 @@ function showTab(index) {
             tabContent1Box5.classList.remove("close");
             tabContent1Box6.classList.remove("close");
             mainVisualMImg.classList.remove("close");
+            mainVisualMBGImg.classList.remove("close");
             nextpage.classList.remove("close");
             mainVisualContainer.classList.remove("close");
-            bird1.style.opacity = '0';
-            bird2.style.opacity = '0';
             break;
     }
 
@@ -1257,7 +1251,6 @@ function showTab(index) {
                 mainVisualContainer.classList.remove("mobileContainer");
             }
             reloadObject(myObject);
-            reloadObject(mainVisualContainer);
         }
 
         function reloadObject(obj) {
@@ -1265,7 +1258,7 @@ function showTab(index) {
             const clone = obj.cloneNode(true);
             obj.parentNode.replaceChild(clone, obj);
         }
-
+ 
         // Initial check
         updateObjectData();
 
