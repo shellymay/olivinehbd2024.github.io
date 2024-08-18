@@ -132,6 +132,12 @@ $(".messagebtn").click(function(){
     position: absolute;
     left: 50%;
     transform: translateX(-93%) translateY(-46%);
+    opacity: 0;
+    transition: 1s;
+        }
+        #main-visual-container.idle{
+            opacity:1;
+
         }
 
         .main-visual{
@@ -750,7 +756,7 @@ font-size: 40px;
     left: 0;
     transform: none;
     clip-path: ellipse(100% 54% at 50% 0%);
-    transition: .3s;
+    transition: 1s;
     transition-property: clip-path;
     
     animation-name: main-visualm-in;
@@ -977,7 +983,7 @@ font-size: 40px;
         <div class="bgcard cardgreen"></div>
         <div class="bgcard cardlace"></div>
         <div class="bgcard cardlace-m"></div>
-        <div id="main-visual-container">
+        <div id="main-visual-container" class="idle">
         <div class="main-visual"><div id="main-visual-bg-img"></div><div id="main-visual-img"></div></div>
         <div class="main-visual-m"><div id="main-visual-m-bg-img"></div><div id="main-visual-m-img"></div></div>
         <div id="main-visual-bird2-img"></div><div id="main-visual-bird1-img"></div>
@@ -1076,6 +1082,7 @@ function showTab(index) {
     // 更改starbar的位置
     switch (index) {
         case 0:
+        mainVisualContainer.classList.add("idle");
             starBar.style.gridTemplateColumns = '0fr 2fr 4fr';
             buttonSwitch.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(2deg)';
@@ -1088,6 +1095,7 @@ function showTab(index) {
             cardlaceM.style.height = '85%';
             break;
         case 1:
+        mainVisualContainer.classList.remove("idle");
             starBar.style.gridTemplateColumns = '1fr 2fr 3fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 2fr 1fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(-3deg)';
@@ -1114,6 +1122,7 @@ function showTab(index) {
             bird2.classList.remove("close");
             break;
         case 2:
+        mainVisualContainer.classList.remove("idle");
             starBar.style.gridTemplateColumns = '2fr 2fr 2fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 2fr 1fr 1fr';
             cardgreen.style.transform = 'rotate(3deg)';
@@ -1140,6 +1149,7 @@ function showTab(index) {
             bird2.classList.remove("close");
             break;
         case 3:
+        mainVisualContainer.classList.remove("idle");
             starBar.style.gridTemplateColumns = '3fr 2fr 1fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 2fr 1fr';
             cardgreen.style.transform = 'rotate(-2deg)';
@@ -1166,6 +1176,7 @@ function showTab(index) {
             bird2.classList.remove("close");
             break;
         case 4:
+        mainVisualContainer.classList.remove("idle");
             starBar.style.gridTemplateColumns = '4fr 2fr 0fr';
             buttonSwitch.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 2fr';
             cardgreen.style.transform = 'rotate(1deg)';
@@ -1190,6 +1201,7 @@ function showTab(index) {
             mainVisualContainer.classList.remove("close");
             bird1.classList.remove("close");
             bird2.classList.remove("close");
+
             break;
     }
 
