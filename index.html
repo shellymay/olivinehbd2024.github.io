@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twemoji-colr-font@15.0.3/twemoji.min.css">
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="tab.css">
     <script>
         (function(d) {
           var config = {
@@ -35,20 +37,47 @@ $(".messagebtn").click(function(){
     <style>
 
 
-        * {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Noto Sans TC","Twemoji", sans-serif;
             font-optical-sizing: auto;
-            font-weight: 500;
+            font-weight: 400;
             font-style: normal;
             letter-spacing: 3px;
+        }
+
+        hr{
+            margin: 5px 0;
+            color: cornsilk;
+        }
+        .text button{
+            color: white;
+  padding: 10px 30px;
+  margin: 20px 0;
+  line-height: 15px;
+  background: #93a770;
+  border-radius: 20px;
+  border: none;
+  height: 55px;
+  font-size: 16px;
+  transition: .3s;
+        }
+
+        .text button:hover{
+  background: green;
+cursor: pointer;
         }
 
         html, body {
             height: 100%;
             overflow: hidden;
+        }
+
+        a{
+            color: #93a770;
+            font-weight: 500;
         }
 
 
@@ -613,7 +642,7 @@ position:absolute;
             width: 100%;
             height: 100%;
         }
-        .tab-content1{
+        .tab-content{
             grid-template-columns: repeat(36, 1fr);
              grid-template-rows: repeat(18, 1fr);
         }
@@ -699,15 +728,93 @@ font-size: 40px;
         }
 
 
+
         .message{
             border: none;
   overflow: hidden;
   height: 100%;
   width: 100%;
         }
+        h3{
+      padding: 10px 0;
+      font-weight: 500;
+      color: cadetblue;
+    }
+    h4{
+        display: inline-block;
+  font-weight: 500;
+    }
+  
+.text{
 
+    width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  grid-column-start: 2;
+  grid-column-end: 36;
+  grid-row-start: 2;
+  grid-row-end: 18;
+  line-height: 1.5em;
+}
 
+.text span{
+ color:#93a770;
+ font-weight: 500;
+    }
+    .text2{
+        grid-column-start: 2;
+  grid-column-end: 22;
+  grid-row-start: 2;
+  grid-row-end: 18;
+    }
+.text3{display: grid;
+    grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+ }
 
+ .text3 div:nth-of-type(1){
+    grid-column-start: 1;
+            grid-column-end: 13;
+            grid-row-start: 1;
+            grid-row-end: 2;
+ }
+ .text3 div:nth-of-type(2){
+    grid-column-start: 13;
+            grid-column-end: 25;
+            grid-row-start: 1;
+            grid-row-end: 2;
+ }
+ .text3 div:nth-of-type(3){
+    grid-column-start: 26;
+            grid-column-end: 38;
+            grid-row-start: 1;
+            grid-row-end: 2;
+ }
+
+ .text3 div:nth-of-type(4){
+    grid-column-start: 1;
+            grid-column-end: 38;
+            grid-row-start: 2;
+            grid-row-end: 18;
+ }
+    
+        .carousel-container1{
+            grid-column-start: 22;
+            grid-column-end: 36;
+            grid-row-start: 2;
+            grid-row-end: 18;
+           
+
+        }
+
+        .thumbnails{
+            grid-column-start: 22;
+            grid-column-end: 36;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+       
+    
 
 
         @media screen and (min-width: 1200px) {
@@ -1018,10 +1125,192 @@ font-size: 40px;
 
 
                 </div>
-                <div class="tab-content tab-content2">Tab 2 Content</div>
-                <div class="tab-content tab-content3">Tab 3 Content</div>
-                <div class="tab-content tab-content4">Tab 4 Content</div>
-                <div class="tab-content tab-content5">Tab 5 Content</div>
+                <div class="tab-content tab-content2">
+                    <div class="text text1">
+
+                    </div>
+      
+                </div>
+                <div class="tab-content tab-content3">
+                     <!-- 縮圖 -->
+                     <div class="thumbnails">
+                        <img src="" class="thumbnail">
+                        <img src="" class="thumbnail">
+                        <img src="" class="thumbnail">
+                        <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                                <img src="" class="thumbnail">
+                    </div>
+                    <!-- 圖片輪播 -->
+                    <div class="carousel-container carousel-container1">
+                        
+                        <div class="carousel">
+                            <div class="slides">
+                                <div class="carousel-image"><h3>預約開始</h3><img src="https://images.plurk.com/4NACskaDEjnNN52O1yxQVa.png"></div>
+                                <div class="carousel-image"><h3>應援餐點</h3><img src="https://images.plurk.com/Vs9RNRrWQ1nruiibsnRnQ.png"></div>
+                                <div class="carousel-image"><h3>應援物公告</h3><img src="https://images.plurk.com/4MmRA4rZPivk1dCEXRzIa9.png"></div>
+                                <div class="carousel-image"><h3>預約教學</h3><img src="https://images.plurk.com/6VHHuX5NLiz22bI0n1vP7a.png" ></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開①</h3><img src="https://images.plurk.com/SaNf503aSOgisKdD2rzBh.png"></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開②</h3><img src="https://images.plurk.com/2JD1rATZCycFE0mK7y2mzt.png" ></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開③</h3><img src="https://images.plurk.com/3s8vVUWwt84zjRTiSkjSLG.png"></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開④</h3><img src="https://images.plurk.com/6riDpepuGulMQBYJgGyI39.png"></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開⑤</h3><img src="https://images.plurk.com/3ILfXiFRY7LitaQ94OvaU3.png"></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開⑥</h3><img src="https://images.plurk.com/1k8Dc0eNzt6y3VaB5VqopE.png" ></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開⑦</h3><img src="https://images.plurk.com/5Pi8HqL6Jn5SL4UtEkvOnP.png" ></div>
+                                <div class="carousel-image"><h3>應援特典貼紙公開⑧-1</h3><img src="https://images.plurk.com/2WNICFHgB3q6hn6Zgo4RiX.png"></div>
+                                <div class="carousel-image"><h3>應援特典貼紙公開⑧-2</h3><img src="https://images.plurk.com/9WDnfUqudCeJYN9wxdIq4.png"></div>
+                                <div class="carousel-image"><h3>應援特典貼紙公開⑨-1</h3><img src="https://images.plurk.com/2uHyyoGJl10vrPyEr7Glrj.jpg"></div>
+                                <div class="carousel-image"><h3>應援特典貼紙公開⑨-2</h3><img src="https://images.plurk.com/5m1y7RgnuwtBBTKoI9b4cn.png"></div>
+                                <div class="carousel-image"><h3>應援特典明信片公開⑩</h3><img src="https://images.plurk.com/6EMahhnMwGJNT3QwxcJy1V.png"></div>
+                            </div>
+                        </div>
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                
+                   
+                
+                    <!-- 燈箱 -->
+                    <div id="lightbox" class="lightbox">
+                        <span class="imageclose">&times;</span>
+                        <button class="lightbox-prev">&#10094;</button>
+                        <img class="lightbox-content" id="lightbox-img">
+                        <button class="lightbox-next">&#10095;</button>
+                    </div>
+          <div class="text text2">
+            <div class="text-tabs-container">
+                <div class="text-tab active"><h3>➊ 活動資訊</h3></div>
+            </div>
+            <div class="text-content-container">
+                <div class="text-tab-content active">
+                    <h4>活動日期</h4><span>▸ </span>2024/9/28（六）- 10/3（四）<br/>
+<h4>營業時間</h4><span>▸ </span>平日12:00～19:00　假日12:00～20:00<br/>
+<h4>活動地點</h4><span>▸ </span>littleroom小房間cafe<br/>
+<h4>活動地址</h4><span>▸ </span>台北市開封街一段71號3樓<br/>
+<h4>主　　辦</h4><span>▸ </span><a href="https://www.plurk.com/sicaclaw" target="_blank">爪</a>、<a href="https://www.plurk.com/_audo" target="_blank">歐搭</a>、<a href="https://www.plurk.com/kinglove1022" target="_blank">蘇油</a>、<a href="https://www.plurk.com/Ranko_0705" target="_blank">蘭子</a><br/>
+<h4>聯絡信箱</h4><span>▸ </span>olivinehbd@gmail.com<br/>
+<h4>活動hashtag</h4><span>▸ </span><a href="https://www.plurk.com/search?q=%E7%BF%A0%E8%89%B2%E8%81%96%E7%A6%B1%E7%A5%AD" target="_blank">#翠色聖禱祭</a><br/>
+<br/>
+※此為粉絲自發性應援活動，與官方無關聯<br/>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.644792371961!2d121.50927907537695!3d25.04612587780845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a950a445bbe7%3A0x9341386c20fc6e7c!2z5bCP5oi_6ZaTY2FmZQ!5e0!3m2!1szh-TW!2stw!4v1727010383402!5m2!1szh-TW!2stw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <hr/>
+            <div class="text-tabs-container">
+                <div class="text-tab"><h3>➋ 應援禮領取方式</h3></div>
+                </div>
+                <div class="text-content-container">
+                    <div class="text-tab-content">
+                        1. 需要打開遊戲，供店家確認有<span>三張奧利文SSR卡</span>之證明。<br/>
+                        <br/>
+2. 應援期間不論內用外帶，<span>購買一杯特調飲品＋客製餐點，即可獲得乙份應援物</span>。<br/>
+<br/>
+3. 一人當日限領乙份。<br/>
+<br/>
+4. 每日供給固定配額之應援物：<br/>
+(1)預約成功者優先保留應援物，若沒有在指定時間到場便釋出<br/>
+(2)外帶者視現場情況發完為止，如未發完，順延至下一個活動日繼續發送。<br/>
+                    </div>
+                </div>
+                <hr/>
+                <div class="text-tabs-container">
+                <div class="text-tab"><h3>➌ 預約規則</h3></div>
+                </div>
+                <div class="text-content-container">
+                    <div class="text-tab-content">
+                        1. 每筆訂單一次僅可預約一個時段。
+下單之商品數量即代表預約人數，每筆訂單<span>預約人數上限為２</span>。<br/>
+（例：兩人同行請下單商品數量２，以此類推）<br/>
+未符合條件者，會被人工取消訂單，還請注意。<br/>
+<br/>
+2. 下單時提供「預先點餐」之服務，可自行參考應援餐點介紹。<br/>
+*購買限定應援餐點並滿足條件者才可獲得應援禮，未購買應援餐點之者，請滿足小房間的低消要求。<br/>
+<br/>
+3. 優先替網路預約者保留應援禮，若該時段<span>十分鐘後未到者便釋出</span>。<br/>
+每個時段之間有間隔十五分鐘清場時間。<br/>
+<br/>
+4. 預約完成後，由於小房間需要時間核對訂單，預計於9/9晚間～9/10開始聯絡並回報首批預約者，但為求整體流程更加順暢，請主動聯繫小房間確認。<br/>
+<br/>
+此賣場訂單會於《翠色聖禱祭》活動結束後統一取消。<br/>
+<a href="https://www.plurk.com/p/3g9o088pmz" target="_blank"><button>預約網址</button></a>
+                    </div>
+                </div>
+
+          </div>
+             
+                </div>
+                <div class="tab-content tab-content4">
+                    <div class="text text3">
+                        <div class="text-tabs-container2">
+                            <div class="text-tab2 active"><h3>插畫</h3></div>
+                        </div>
+
+                        <div class="text-tabs-container2">
+                            <div class="text-tab2"><h3>照片</h3></div>
+                            </div>
+
+                            <div class="text-tabs-container2">
+                            <div class="text-tab2"><h3>小說</h3></div>
+                            </div>
+
+                            <div class="text-content-container2">
+                                <div class="text-tab-content2 active">
+                                    <!-- 縮圖 -->
+                     <div class="thumbnails2">
+                        <img src="" class="thumbnail2">
+                        <img src="" class="thumbnail2">
+                   
+                    </div>
+                    <!-- 圖片輪播 -->
+                    <div class="carousel-container carousel-container2">
+                        
+                        <div class="carousel2">
+                            <div class="slides2">
+                                <div class="carousel-image2"><h3>預約開始</h3><img src="https://images.plurk.com/4NACskaDEjnNN52O1yxQVa.png"></div>
+                                <div class="carousel-image2"><h3>應援餐點</h3><img src="https://images.plurk.com/Vs9RNRrWQ1nruiibsnRnQ.png"></div>
+                                <div class="carousel-image2"><h3>應援物公告</h3><img src="https://images.plurk.com/4MmRA4rZPivk1dCEXRzIa9.png"></div>
+                       
+                            </div>
+                        </div>
+                        <button class="prev2">&#10094;</button>
+                        <button class="next2">&#10095;</button>
+                    </div>
+                
+                   
+                
+                    <!-- 燈箱 -->
+                    <div id="lightbox2" class="lightbox2">
+                        <span class="imageclose2">&times;</span>
+                        <button class="lightbox-prev2">&#10094;</button>
+                        <img class="lightbox-content2" id="lightbox-img2">
+                        <button class="lightbox-next2">&#10095;</button>
+                    </div>
+                                </div>
+                                <div class="text-tab-content2">
+                                    2
+                                </div>
+                                <div class="text-tab-content2">
+                                    3
+                                </div>
+                            </div>
+            
+                      </div>
+              
+                </div>
+                <div class="tab-content tab-content5">
+          
+         
+                </div>
             </div>
             <div class="nextpage"></div>
             <div class="decostar leftstar"></div>
@@ -1029,6 +1318,8 @@ font-size: 40px;
         </div>
     </div>
 
+    <script src="carousel.js"></script>
+    <script src="tab.js"></script>
     <script>
         let currentTab = 0;
 

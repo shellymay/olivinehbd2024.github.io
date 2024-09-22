@@ -1,0 +1,117 @@
+
+.text-tabs-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+}
+
+.text-tab {
+    padding: 5px 0;
+    cursor: pointer;
+    height: fit-content !important;
+    position: relative;
+}
+
+.text-tab:hover {
+}
+
+.text-tab.active {
+}
+
+.text-content-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+}
+
+.text-tab-content {
+    display: none;
+    padding: 5px;
+    height: fit-content !important;
+}
+
+.text-tab-content.active {
+    display: block;
+
+}
+
+
+.text-tab::after{
+    content: "show information ⌵";
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  line-height: 50px;
+  color:#93a770;
+
+}
+
+.text-tab.active::after{
+    content: "";
+}
+
+
+/* tab2 */
+
+
+
+.text-tabs-container2 {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+}
+
+.text-tab2 {
+    padding: 5px 0;
+    cursor: pointer;
+    height: fit-content !important;
+    position: relative;
+    text-align: center;
+}
+
+.text-tab2:hover {
+}
+
+.text-tab2.active {
+}
+
+.text-content-container2 {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+}
+
+.text-tab-content2 {
+    display: none;
+    padding: 5px;
+    height: fit-content !important;
+}
+
+.text-tab-content2.active {
+    display: block;
+
+}
+
+.text-tab2 h3::before{
+    content: "#　";
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 70px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    line-height: 60px;
+    color: wheat;
+    font-family: "amandine", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    z-index: -1;
+  }
+}
+
+
