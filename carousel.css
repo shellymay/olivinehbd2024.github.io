@@ -1,14 +1,13 @@
+/* 輪播容器樣式 */
+
 .carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    max-width: 600px;
+    margin: auto;
 }
 
 .carousel {
-    width: 80%;
     overflow: hidden;
-    position: relative;
 }
 
 .slides {
@@ -16,292 +15,145 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-image {
-    max-width: 0%;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    object-fit: contain;
-    font-size: 0;
-
-}
-
-.carousel-image h3{
-    position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  text-align: center;
-  line-height: 50px;
-  width: 100%;
-}
-.carousel-image img{
-    max-height: 100%;
+.slide-item {
     max-width: 100%;
-    margin: auto;
-    top: 50%;
+    box-sizing: border-box;
     position: relative;
-    transform: translateY(-50%) translateX(-50%);
-    left: 50%;
-    padding-top: 60px;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
 }
- 
 
-.carousel-image.active {
+/* 當前顯示的圖片 */
+.slide-item.active {
     opacity: 1;
-    min-width: 100%;
-    font-size:16px;
+    min-width:100%;
+}
+
+.slide-item p{
+    display: none;
+}
+
+.carousel-image {
+
+    width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+
+.image-title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #333;
 }
 
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
+    padding: 16px;
+    margin-top: -22px;
+    color:  rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    background: transparent;
     border: none;
-    padding: 10px;
-}
-
-.prev {
-    left: 10px;
+    z-index: 1;
+    
 }
 
 .next {
-    right: 10px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-/* 縮圖樣式 */
+.prev:hover, .next:hover {
+    color: #5ea821;
+}
+
 .thumbnails {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: -10%;
     z-index: 1;
+  position: relative;
+
 }
 
 .thumbnail {
-    width: 8px;
-  height: 8px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 100%;
-  background-color: #aaa;
-
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+    margin: 0 5px;
+    cursor: pointer;
+    background: #8b8b8b;
+    border-radius: 100%;
 }
 
 .thumbnail.active {
-    border: 3px solid #6ead26;
+    background: #5ea821;
 }
 
 /* 燈箱樣式 */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 1000;
+    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, .7);
 }
 
 .lightbox-content {
     margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.lightbox-content.show {
-    opacity: 1;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    object-fit: contain;
+    height: 95%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
 }
 
 .imageclose {
     position: absolute;
-    top: 20px;
-    right: 35px;
+    top: 30px;
+    right: 30px;
     color: white;
     font-size: 40px;
-    font-weight: bold;
     cursor: pointer;
 }
 
 .lightbox-prev, .lightbox-next {
+    cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
     color: white;
-    background-color: transparent;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
     border: none;
-    cursor: pointer;
+    background: transparent;
 }
 
 .lightbox-prev {
-    left: 10px;
+    left: 0;
 }
 
 .lightbox-next {
-    right: 10px;
+    right: 0;
 }
 
-/* 輪播圖2 */
 
-.carousel-container2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 
-.carousel2 {
-    width: 80%;
-    overflow: hidden;
-    position: relative;
-}
 
-.slides2 {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
 
-.carousel-image2 {
-    max-width: 0%;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    object-fit: contain;
-    font-size: 0;
-
-}
-
-.carousel-image2 h3{
-    position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  text-align: center;
-  line-height: 50px;
-  width: 100%;
-}
-.carousel-image2 img{
-    max-height: 100%;
-    max-width: 100%;
-    margin: auto;
-    top: 50%;
-    position: relative;
-    transform: translateY(-50%) translateX(-50%);
-    left: 50%;
-    padding-top: 60px;
-}
- 
-
-.carousel-image2.active {
-    opacity: 1;
-    min-width: 100%;
-    font-size:16px;
-}
-
-.prev2, .next2 {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    padding: 10px;
-}
-
-.prev2 {
-    left: 10px;
-}
-
-.next2 {
-    right: 10px;
-}
-
-/* 縮圖樣式 */
-.thumbnails2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    z-index: 1;
-}
-
-.thumbnail2 {
-    width: 8px;
-  height: 8px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 100%;
-  background-color: #aaa;
-
-}
-
-.thumbnail2.active {
-    border: 3px solid #6ead26;
-}
-
-/* 燈箱樣式 */
-.lightbox2 {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.lightbox-content2 {
-    margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.lightbox-content2.show2 {
-    opacity: 1;
-}
-
-.imageclose2 {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.lightbox-prev2, .lightbox-next2 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    color: white;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.lightbox-prev2 {
-    left: 10px;
-}
-
-.lightbox-next2 {
-    right: 10px;
-}

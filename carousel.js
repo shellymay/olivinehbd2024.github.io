@@ -1,98 +1,122 @@
-let index = 0;
-let isPaused = false;
+const carousels = [
+    { id: 1, index: 0, isPaused: false },
+    { id: 2, index: 0, isPaused: false },
+    { id: 3, index: 0, isPaused: false },
+    { id: 4, index: 0, isPaused: false }
+];
 
-function showSlides() {
-    if (!isPaused) {
-        const slides = document.querySelectorAll('.carousel-image');
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-        });
-        slides[index].classList.add('active');
-        updateThumbnails();
-        index = (index + 1) % slides.length;
+let currentCarouselId = null;
+let currentSlideIndex = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.querySelector(".imageclose");
+const lightboxPrev = document.querySelector(".lightbox-prev");
+const lightboxNext = document.querySelector(".lightbox-next");
+
+carousels.forEach(carousel => {
+    const slides = document.querySelectorAll(`#carousel-${carousel.id} .slide-item`);
+    const thumbnails = document.querySelectorAll(`#thumbnails-${carousel.id} .thumbnail`);
+
+    function showSlides() {
+        if (!carousel.isPaused) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[carousel.index].classList.add('active');
+            updateThumbnails();
+            carousel.index = (carousel.index + 1) % slides.length;
+        }
+        setTimeout(showSlides, 5000); // 每5秒切換一次圖片
     }
-    setTimeout(showSlides, 5000); // 每5秒切換一次圖片
-}
 
-function updateThumbnails() {
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    thumbnails.forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === index);
-    });
-}
+    function updateThumbnails() {
+        thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === carousel.index);
+        });
+    }
 
-showSlides();
+    showSlides();
 
-// 左右按鈕
-document.querySelector('.prev').addEventListener('click', () => {
-    index = (index - 1 + document.querySelectorAll('.carousel-image').length) % document.querySelectorAll('.carousel-image').length;
-    updateSlide();
-});
-
-document.querySelector('.next').addEventListener('click', () => {
-    index = (index + 1) % document.querySelectorAll('.carousel-image').length;
-    updateSlide();
-});
-
-function updateSlide() {
-    const slides = document.querySelectorAll('.carousel-image');
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
-    updateThumbnails();
-}
-
-// 點擊縮圖跳轉到對應圖片
-document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
-    thumb.addEventListener('click', () => {
-        index = i;
+    // 左右按鈕事件
+    document.querySelector(`#carousel-${carousel.id} .prev`).addEventListener('click', () => {
+        carousel.index = (carousel.index - 1 + slides.length) % slides.length;
         updateSlide();
     });
-});
 
-// 點擊圖片彈出燈箱
-const images = document.querySelectorAll('.carousel-image img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.imageclose');
+    document.querySelector(`#carousel-${carousel.id} .next`).addEventListener('click', () => {
+        carousel.index = (carousel.index + 1) % slides.length;
+        updateSlide();
+    });
 
-images.forEach(image => {
-    image.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = image.src;
-        lightboxImg.classList.add('show');
-        isPaused = true; // 暫停輪播
+    function updateSlide() {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[carousel.index].classList.add('active');
+        updateThumbnails();
+    }
+
+    // 縮圖點擊事件
+    thumbnails.forEach((thumb, i) => {
+        thumb.addEventListener('click', () => {
+            carousel.index = i;
+            updateSlide();
+        });
+    });
+
+    // 燈箱點擊圖片事件
+    slides.forEach((slide, i) => {
+        slide.querySelector("img").addEventListener("click", () => {
+            openLightbox(carousel.id, i);
+        });
     });
 });
 
-// 關閉燈箱
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    isPaused = false; // 重啟輪播
-    lightboxImg.classList.remove('show');
-});
+// 燈箱打開邏輯
+function openLightbox(carouselId, slideIndex) {
+    currentCarouselId = carouselId;
+    currentSlideIndex = slideIndex;
 
-// 燈箱左右按鈕切換
-document.querySelector('.lightbox-prev').addEventListener('click', () => {
-    index = (index - 1 + images.length) % images.length;
-    updateLightbox();
-});
+    // 暫停對應的輪播
+    const currentCarousel = carousels.find(carousel => carousel.id === carouselId);
+    currentCarousel.isPaused = true;
 
-document.querySelector('.lightbox-next').addEventListener('click', () => {
-    index = (index + 1) % images.length;
-    updateLightbox();
-});
-
-function updateLightbox() {
-    const image = images[index];
-    lightboxImg.src = image.src;
+    lightbox.style.display = "block";
+    showLightboxImage();
 }
 
-// 點擊燈箱外部關閉
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-        isPaused = false; // 重啟輪播
-        lightboxImg.classList.remove('show');
+// 顯示燈箱圖片
+function showLightboxImage() {
+    const carouselSlides = document.querySelectorAll(`#carousel-${currentCarouselId} .slide-item img`);
+    const currentImg = carouselSlides[currentSlideIndex].src;
+    lightboxImg.src = currentImg;
+}
+
+// 關閉燈箱
+lightboxClose.addEventListener("click", () => {
+    lightbox.style.display = "none";
+
+    // 恢復輪播
+    const currentCarousel = carousels.find(carousel => carousel.id === currentCarouselId);
+    currentCarousel.isPaused = false;
+});
+
+// 燈箱切換上一張圖片
+lightboxPrev.addEventListener("click", () => {
+    currentSlideIndex = (currentSlideIndex - 1 + document.querySelectorAll(`#carousel-${currentCarouselId} .slide-item`).length) % document.querySelectorAll(`#carousel-${currentCarouselId} .slide-item`).length;
+    showLightboxImage();
+});
+
+// 燈箱切換下一張圖片
+lightboxNext.addEventListener("click", () => {
+    currentSlideIndex = (currentSlideIndex + 1) % document.querySelectorAll(`#carousel-${currentCarouselId} .slide-item`).length;
+    showLightboxImage();
+});
+
+// 點擊燈箱以外的區域關閉燈箱
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        lightbox.style.display = "none";
+
+        // 恢復輪播
+        const currentCarousel = carousels.find(carousel => carousel.id === currentCarouselId);
+        currentCarousel.isPaused = false;
     }
 });

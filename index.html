@@ -52,16 +52,16 @@ $(".messagebtn").click(function(){
             margin: 5px 0;
             color: cornsilk;
         }
-        .text button{
+        .text2 button{
             color: white;
-  padding: 10px 30px;
+  padding: 10px 20px;
   margin: 20px 0;
   line-height: 15px;
   background: #93a770;
   border-radius: 20px;
   border: none;
-  height: 55px;
-  font-size: 16px;
+  height: 50px;
+  font-size: 14px;
   transition: .3s;
         }
 
@@ -761,12 +761,23 @@ font-size: 40px;
  color:#93a770;
  font-weight: 500;
     }
-    .text2{
+    
+
+    
+    .text1,.text2{
         grid-column-start: 2;
-  grid-column-end: 22;
+  grid-column-end: 21;
   grid-row-start: 2;
   grid-row-end: 18;
     }
+
+    .tab-content2 .carousel-section,.tab-content3 .carousel-section{
+        grid-column-start: 22;
+  grid-column-end: 36;
+  grid-row-start: 2;
+  grid-row-end: 18; 
+    }
+
 .text3{display: grid;
     grid-template-columns: repeat(36, 1fr);
   grid-template-rows: repeat(18, 1fr);
@@ -797,22 +808,12 @@ font-size: 40px;
             grid-row-start: 2;
             grid-row-end: 18;
  }
+
+
     
-        .carousel-container1{
-            grid-column-start: 22;
-            grid-column-end: 36;
-            grid-row-start: 2;
-            grid-row-end: 18;
-           
+  
 
-        }
-
-        .thumbnails{
-            grid-column-start: 22;
-            grid-column-end: 36;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
+      
        
     
 
@@ -1067,7 +1068,7 @@ font-size: 40px;
             display: block;
         }
 
-        .text2 {
+        .text1, .text2 {
   grid-column-start: 2;
   grid-column-end: 20;
   grid-row-start: 1;
@@ -1075,25 +1076,11 @@ font-size: 40px;
   font-size: 14px;
   overflow: auto;}
 
-  .text2 iframe{
+  .text1 iframe{
     display: none;
   }
 
-  .thumbnails{
-    grid-column-start: 2;
-  grid-column-end: 20;
-  grid-row-start: 7;
-  grid-row-end: 8;
-  display: none;
-  }
-
-  .carousel-container1 {
-  grid-column-start: 2;
-  grid-column-end: 20;
-  grid-row-start: 8;
-  grid-row-end: 14;
-  display: none;
-  }
+ 
 
 
     }
@@ -1155,90 +1142,64 @@ font-size: 40px;
                 </div>
                 <div class="tab-content tab-content2">
                     <div class="text text1">
-
+                        
+                         <h3>活動資訊</h3>
+                        
+                        
+                          
+                                <h4>活動日期</h4><span>▸ </span>2024/9/28（六）- 10/3（四）<br/>
+            <h4>營業時間</h4><span>▸ </span>平日12:00～19:00　假日12:00～20:00<br/>
+            <h4>活動地點</h4><span>▸ </span>littleroom小房間cafe<br/>
+            <h4>活動地址</h4><span>▸ </span>台北市開封街一段71號3樓<br/>
+            <h4>主　　辦</h4><span>▸ </span><a href="https://www.plurk.com/sicaclaw" target="_blank">爪</a>、<a href="https://www.plurk.com/_audo" target="_blank">歐搭</a>、<a href="https://www.plurk.com/kinglove1022" target="_blank">蘇油</a>、<a href="https://www.plurk.com/Ranko_0705" target="_blank">蘭子</a><br/>
+            <h4>聯絡信箱</h4><span>▸ </span>olivinehbd@gmail.com<br/>
+            <h4>活動hashtag</h4><span>▸ </span><a href="https://www.plurk.com/search?q=%E7%BF%A0%E8%89%B2%E8%81%96%E7%A6%B1%E7%A5%AD" target="_blank">#翠色聖禱祭</a><br/>
+            <br/>
+            ※此為粉絲自發性應援活動，與官方無關聯<br/>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.644792371961!2d121.50927907537695!3d25.04612587780845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a950a445bbe7%3A0x9341386c20fc6e7c!2z5bCP5oi_6ZaTY2FmZQ!5e0!3m2!1szh-TW!2stw!4v1727010383402!5m2!1szh-TW!2stw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            
+                        
                     </div>
+
+                    <!-- 第一個輪播圖 -->
+    <div class="carousel-section">
+        <div class="carousel-container" id="carousel-1">
+            <button class="prev">&#10094;</button>
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/4NACskaDEjnNN52O1yxQVa.png" alt="" class="carousel-image">
+                        <p class="image-title">9/8預約開始</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/6XqCqq7egFtVZIRfEXqAkH.png" alt="" class="carousel-image">
+                        <p class="image-title">Q&A</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/45Cze71Vx8oC1XAQNlp1BT.png" alt="" class="carousel-image">
+                        <p class="image-title">應援創作募集</p>
+                    </div>
+                </div>
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="thumbnails" id="thumbnails-1">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+        </div>
+    </div>
       
                 </div>
                 <div class="tab-content tab-content3">
-                     <!-- 縮圖 -->
-                     <div class="thumbnails">
-                        <img src="" class="thumbnail">
-                        <img src="" class="thumbnail">
-                        <img src="" class="thumbnail">
-                        <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                                <img src="" class="thumbnail">
-                    </div>
-                    <!-- 圖片輪播 -->
-                    <div class="carousel-container carousel-container1">
-                        
-                        <div class="carousel">
-                            <div class="slides">
-                                <div class="carousel-image"><h3>預約開始</h3><img src="https://images.plurk.com/4NACskaDEjnNN52O1yxQVa.png"></div>
-                                <div class="carousel-image"><h3>應援餐點</h3><img src="https://images.plurk.com/Vs9RNRrWQ1nruiibsnRnQ.png"></div>
-                                <div class="carousel-image"><h3>應援物公告</h3><img src="https://images.plurk.com/4MmRA4rZPivk1dCEXRzIa9.png"></div>
-                                <div class="carousel-image"><h3>預約教學</h3><img src="https://images.plurk.com/6VHHuX5NLiz22bI0n1vP7a.png" ></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開①</h3><img src="https://images.plurk.com/SaNf503aSOgisKdD2rzBh.png"></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開②</h3><img src="https://images.plurk.com/2JD1rATZCycFE0mK7y2mzt.png" ></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開③</h3><img src="https://images.plurk.com/3s8vVUWwt84zjRTiSkjSLG.png"></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開④</h3><img src="https://images.plurk.com/6riDpepuGulMQBYJgGyI39.png"></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開⑤</h3><img src="https://images.plurk.com/3ILfXiFRY7LitaQ94OvaU3.png"></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開⑥</h3><img src="https://images.plurk.com/1k8Dc0eNzt6y3VaB5VqopE.png" ></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開⑦</h3><img src="https://images.plurk.com/5Pi8HqL6Jn5SL4UtEkvOnP.png" ></div>
-                                <div class="carousel-image"><h3>應援特典貼紙公開⑧-1</h3><img src="https://images.plurk.com/2WNICFHgB3q6hn6Zgo4RiX.png"></div>
-                                <div class="carousel-image"><h3>應援特典貼紙公開⑧-2</h3><img src="https://images.plurk.com/9WDnfUqudCeJYN9wxdIq4.png"></div>
-                                <div class="carousel-image"><h3>應援特典貼紙公開⑨-1</h3><img src="https://images.plurk.com/2uHyyoGJl10vrPyEr7Glrj.jpg"></div>
-                                <div class="carousel-image"><h3>應援特典貼紙公開⑨-2</h3><img src="https://images.plurk.com/5m1y7RgnuwtBBTKoI9b4cn.png"></div>
-                                <div class="carousel-image"><h3>應援特典明信片公開⑩</h3><img src="https://images.plurk.com/6EMahhnMwGJNT3QwxcJy1V.png"></div>
-                            </div>
-                        </div>
-                        <button class="prev">&#10094;</button>
-                        <button class="next">&#10095;</button>
-                    </div>
-                
                    
-                
-                    <!-- 燈箱 -->
-                    <div id="lightbox" class="lightbox">
-                        <span class="imageclose">&times;</span>
-                        <button class="lightbox-prev">&#10094;</button>
-                        <img class="lightbox-content" id="lightbox-img">
-                        <button class="lightbox-next">&#10095;</button>
-                    </div>
           <div class="text text2">
+
             <div class="text-tabs-container">
-                <div class="text-tab active"><h3>➊ 活動資訊</h3></div>
-            </div>
-            <div class="text-content-container">
-                <div class="text-tab-content active">
-                    <h4>活動日期</h4><span>▸ </span>2024/9/28（六）- 10/3（四）<br/>
-<h4>營業時間</h4><span>▸ </span>平日12:00～19:00　假日12:00～20:00<br/>
-<h4>活動地點</h4><span>▸ </span>littleroom小房間cafe<br/>
-<h4>活動地址</h4><span>▸ </span>台北市開封街一段71號3樓<br/>
-<h4>主　　辦</h4><span>▸ </span><a href="https://www.plurk.com/sicaclaw" target="_blank">爪</a>、<a href="https://www.plurk.com/_audo" target="_blank">歐搭</a>、<a href="https://www.plurk.com/kinglove1022" target="_blank">蘇油</a>、<a href="https://www.plurk.com/Ranko_0705" target="_blank">蘭子</a><br/>
-<h4>聯絡信箱</h4><span>▸ </span>olivinehbd@gmail.com<br/>
-<h4>活動hashtag</h4><span>▸ </span><a href="https://www.plurk.com/search?q=%E7%BF%A0%E8%89%B2%E8%81%96%E7%A6%B1%E7%A5%AD" target="_blank">#翠色聖禱祭</a><br/>
-<br/>
-※此為粉絲自發性應援活動，與官方無關聯<br/>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.644792371961!2d121.50927907537695!3d25.04612587780845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a950a445bbe7%3A0x9341386c20fc6e7c!2z5bCP5oi_6ZaTY2FmZQ!5e0!3m2!1szh-TW!2stw!4v1727010383402!5m2!1szh-TW!2stw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-            <hr/>
-            <div class="text-tabs-container">
-                <div class="text-tab"><h3>➋ 應援禮領取方式</h3></div>
+                <div class="text-tab active"><h3>➊ 應援禮領取方式</h3></div>
                 </div>
                 <div class="text-content-container">
-                    <div class="text-tab-content">
+                    <div class="text-tab-content active">
                         1. 需要打開遊戲，供店家確認有<span>三張奧利文SSR卡</span>之證明。<br/>
                         <br/>
 2. 應援期間不論內用外帶，<span>購買一杯特調飲品＋客製餐點，即可獲得乙份應援物</span>。<br/>
@@ -1252,7 +1213,7 @@ font-size: 40px;
                 </div>
                 <hr/>
                 <div class="text-tabs-container">
-                <div class="text-tab"><h3>➌ 預約規則</h3></div>
+                <div class="text-tab"><h3>➋ 預約規則</h3></div>
                 </div>
                 <div class="text-content-container">
                     <div class="text-tab-content">
@@ -1275,6 +1236,90 @@ font-size: 40px;
                 </div>
 
           </div>
+
+           <!-- 第二個輪播圖 -->
+    <div class="carousel-section">
+        <div class="carousel-container" id="carousel-2">
+            <button class="prev">&#10094;</button>
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/Vs9RNRrWQ1nruiibsnRnQ.png" alt="" class="carousel-image">
+                        <p class="image-title">應援餐點</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/4MmRA4rZPivk1dCEXRzIa9.png" alt="" class="carousel-image">
+                        <p class="image-title">應援物公告</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/SaNf503aSOgisKdD2rzBh.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開①</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/2JD1rATZCycFE0mK7y2mzt.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開②</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/3s8vVUWwt84zjRTiSkjSLG.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開③</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/6riDpepuGulMQBYJgGyI39.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開④</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/3ILfXiFRY7LitaQ94OvaU3.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開⑤</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/1k8Dc0eNzt6y3VaB5VqopE.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開⑥</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/5Pi8HqL6Jn5SL4UtEkvOnP.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開⑦</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/2WNICFHgB3q6hn6Zgo4RiX.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典貼紙公開⑧-1</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/9WDnfUqudCeJYN9wxdIq4.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典貼紙公開⑧-2</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/2uHyyoGJl10vrPyEr7Glrj.jpg" alt="" class="carousel-image">
+                        <p class="image-title">應援特典貼紙公開⑨-1</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/5m1y7RgnuwtBBTKoI9b4cn.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典貼紙公開⑨-2</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="https://images.plurk.com/6EMahhnMwGJNT3QwxcJy1V.png" alt="" class="carousel-image">
+                        <p class="image-title">應援特典明信片公開⑩</p>
+                    </div>
+                </div>
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="thumbnails" id="thumbnails-2">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+        </div>
+    </div>
              
                 </div>
                 <div class="tab-content tab-content4">
@@ -1293,39 +1338,145 @@ font-size: 40px;
 
                             <div class="text-content-container2">
                                 <div class="text-tab-content2 active">
-                                    <!-- 縮圖 -->
-                     <div class="thumbnails2">
-                        <img src="" class="thumbnail2">
-                        <img src="" class="thumbnail2">
-                   
+                                     <!-- 第三個輪播圖 -->
+    <div class="carousel-section">
+        <div class="carousel-container" id="carousel-3">
+            <button class="prev">&#10094;</button>
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide-item">
+                        <img src="images/illust/17 - Seina Higashiya.jpeg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
                     </div>
-                    <!-- 圖片輪播 -->
-                    <div class="carousel-container carousel-container2">
-                        
-                        <div class="carousel2">
-                            <div class="slides2">
-                                <div class="carousel-image2"><h3>預約開始</h3><img src="https://images.plurk.com/4NACskaDEjnNN52O1yxQVa.png"></div>
-                                <div class="carousel-image2"><h3>應援餐點</h3><img src="https://images.plurk.com/Vs9RNRrWQ1nruiibsnRnQ.png"></div>
-                                <div class="carousel-image2"><h3>應援物公告</h3><img src="https://images.plurk.com/4MmRA4rZPivk1dCEXRzIa9.png"></div>
-                       
-                            </div>
-                        </div>
-                        <button class="prev2">&#10094;</button>
-                        <button class="next2">&#10095;</button>
+                    <div class="slide-item">
+                        <img src="images/illust/24-0829 - HABI.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
                     </div>
-                
-                   
-                
-                    <!-- 燈箱 -->
-                    <div id="lightbox2" class="lightbox2">
-                        <span class="imageclose2">&times;</span>
-                        <button class="lightbox-prev2">&#10094;</button>
-                        <img class="lightbox-content2" id="lightbox-img2">
-                        <button class="lightbox-next2">&#10095;</button>
+                    <div class="slide-item">
+                        <img src="images/illust/96-1 - 陳怡臻.jpg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
                     </div>
+                    <div class="slide-item">
+                        <img src="images/illust/20240904_041313_0000 - 嘎抓.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/FB_IMG_1725134053697 - 傲嬌琥珀.jpg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/illustration_m00ncarnival - Luna Lovelast.jpg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/IMG_6862 - Misaka Yushino.jpeg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/IMG_20210929_153547 - Yuki Sakamoto.jpg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/OlivineBirthday2024_pineapplekatty - Katty.jpg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/s1 - 利路貓.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/s2 - 利路貓.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/s3 - 利路貓.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/未命名的作品 - TingYun Lin.jpeg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/插畫_小趙 - 趙育庭.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/插畫_春乃 - 徐藝瑄.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/插畫_奧哥的小弟 - 秋雨晨.jpeg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/插畫＿綺想曲 - 吳怡靜.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/奧利文生日 - 傲嬌琥珀.jpg" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/illust/奧利文生日應援 - 華蓮蓮.png" alt="" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                </div>
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="thumbnails" id="thumbnails-3">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+
+        </div>
+    </div>
                                 </div>
                                 <div class="text-tab-content2">
-                                    2
+                                    <!-- 第四個輪播圖 -->
+    <div class="carousel-section">
+        <div class="carousel-container" id="carousel-4">
+            <button class="prev">&#10094;</button>
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide-item">
+                        <img src="image1.jpg" alt="圖片1" class="carousel-image">
+                        <p class="image-title">圖片1標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="image2.jpg" alt="圖片2" class="carousel-image">
+                        <p class="image-title">圖片2標題</p>
+                    </div>
+                    <div class="slide-item">
+                        <img src="image3.jpg" alt="圖片3" class="carousel-image">
+                        <p class="image-title">圖片3標題</p>
+                    </div>
+                </div>
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="thumbnails" id="thumbnails-4">
+            <img src="image1.jpg" alt="縮圖1" class="thumbnail">
+            <img src="image2.jpg" alt="縮圖2" class="thumbnail">
+            <img src="image3.jpg" alt="縮圖3" class="thumbnail">
+        </div>
+    </div>
                                 </div>
                                 <div class="text-tab-content2">
                                     3
@@ -1340,10 +1491,18 @@ font-size: 40px;
          
                 </div>
             </div>
+              
             <div class="nextpage"></div>
             <div class="decostar leftstar"></div>
             <div class="decostar rightstar"></div>
         </div>
+         <!-- 燈箱 -->
+    <div id="lightbox" class="lightbox">
+        <span class="imageclose">&times;</span>
+        <button class="lightbox-prev">&#10094;</button>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="lightbox-next">&#10095;</button>
+    </div>
     </div>
 
     <script src="carousel.js"></script>
@@ -1588,7 +1747,7 @@ function showTab(index) {
         const mainVisualContainer = document.getElementById("main-visual-container");
        
             if (window.innerWidth < 577) {
-                myObject.setAttribute("data", "https://addddddo.site/guestbook8/index-m.html");
+                myObject.setAttribute("data", "https://addddddo.site/guestbook8/index.html");
                 mainVisualContainer.classList.add("mobileContainer");
             } else {
                 myObject.setAttribute("data", "https://addddddo.site/guestbook8/index.html");
