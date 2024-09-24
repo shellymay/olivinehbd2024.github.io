@@ -4,7 +4,6 @@
     position: relative;
     max-width: 600px;
     margin: auto;
-    cursor: pointer;
 }
 
 .carousel {
@@ -82,7 +81,6 @@
     margin-top: 0;
     z-index: 1;
   position: relative;
-  display: none;
 
 }
 
