@@ -25,7 +25,7 @@ carousels.forEach(carousel => {
             updateThumbnails();
             carousel.index = (carousel.index + 1) % slides.length;
         }
-        setTimeout(showSlides, 10000); // 每10秒切換一次圖片
+        setTimeout(showSlides, 5000); // 每5秒切換一次圖片
     }
 
     function updateThumbnails() {
